@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            display: inline-block;
+            border: 2px solid red;
+            width: 100px;
+            height: 100px;
+            margin: 4px;
+        }
+        .container{
+            border: 2px solid green;
+            background-color: greenyellow;
+            height: 3000px;
+        }
+        #box1{
+            /* css position */
+            /* position: static;  default */
+            /* position: absolute; */
+            /* position: relative; */
+        }
+        #box3{
+            /* position relative leave a gap */
+            /* position: relative; */
+
+            /* position absolute not leave a gap. parent position, now you can move this whereever you want */
+            /* position: absolute; */
+
+            position: fixed;
+            bottom: 10px;
+            /* top: 30px;
+            left: 30px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3 Chat With Us.</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box5">5</div>
+    </div>
+    
+</body>
+</html>
