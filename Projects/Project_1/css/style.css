@@ -1,0 +1,114 @@
+body {
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    background: url('/Projects/Project_1/img/mikolaj-DCzpr09cTXY-unsplash.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: bold;
+}
+
+.left {
+    position: absolute;
+    left: 34px;
+    top: 9px;
+    /* display: block; */
+    display: inline-block;
+    /* border: 2px solid rgb(255, 0, 0); */
+}
+.left img{
+    width: 50px;
+    /* filter: invert(100%); */
+}
+.left div{
+    text-align: center;
+    font-size: small;
+}
+.middle {
+/* border: 2px solid green; */
+display: inline-block;
+width: 44%;
+margin: 35px auto;
+font-size: 14px;
+background-color: rgba(253, 216, 186, 0.199);
+border-radius: 8px;    
+position: relative;
+    left: 323px;
+    top: -16px;        
+}
+
+.right {
+    position: absolute;
+    right: 13px;
+    top: 27px;
+    display: inline-block;
+    /* border: 2px solid yellow; */
+}
+
+.navbar{
+    /* display: inline-block; */
+}
+
+.navbar li{
+    display: inline-block;
+    /* color: white; */
+}
+.navbar li a{
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+.navbar li a:hover, .navbar li a.active{
+    color: rgb(184, 123, 9);
+    
+}
+.btn{
+    margin: 0px 10px;
+    background-color: rgba(83, 83, 83, 0.795);
+    color: white;
+    padding: 5px 13px;
+    /* border: 2px solid rgb(172, 163, 163); */
+    border-radius: 20px;
+    font-size: 14px;
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+.btn:hover{
+    background-color: rgb(173, 82, 82);
+}
+
+.container{
+    /* border: 2px solid red; */
+    border-radius: 10px;
+    background-color: rgba(253, 216, 186, 0.199);
+    display: inline-block;
+    margin: 23px 138px;
+    padding: 20px 30px;
+    box-shadow:  rgb(38 37 36) 0px 0px 76px -3px;
+}
+.container input{
+    margin: 4px 20px;
+    border-radius: 7px;
+    padding: 7px 28px;
+    background-color: rgba(255, 255, 255, 0.712);
+    outline: none;
+    border: none;
+    
+}
+
+
+.container .login{
+    display: inline-block;
+    margin: 17px 54px;
+    
+}
+
+.login input{
+    background-color: rgba(224, 185, 75, 0.986);
+}
+.login input:hover{
+    background-color: rgba(90, 11, 11, 0.61);
+}
