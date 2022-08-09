@@ -87,7 +87,8 @@ position: relative;
     display: inline-block;
     margin: 23px 138px;
     padding: 20px 30px;
-    box-shadow:  rgb(38 37 36) 0px 0px 76px -3px;
+    box-shadow:  rgb(38 37 36) 0px 0px 76
+    px -3px;
 }
 .container input{
     margin: 4px 20px;

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        .container{
+            height: 400px;
+            width: 100%;
+            border: 2px solid black;
+            /* initialize the container as a flex-box */
+            display: flex;
+
+
+
+            /* flex properties for flex container */
+
+
+            /* by default flex direction is row ...... */
+            /* flex-direction: row;      */
+/* 
+            flex-direction: column;
+            flex-direction: row-reverse;
+            flex-direction: column-reverse; */
+
+            /* flex-wrap: wrap;
+            flex-wrap: wrap-reverse; */
+            /* flex-wrap: wrap; */
+
+
+            /* we can write flex-direction: and flex-wrap: in a single property */
+            /* flex-flow: row-reverse wrap; */
+
+            /* justify-content: center;
+            justify-content: space-between;
+            justify-content: space-evenly;
+            justify-content: space-around; */
+
+/* 
+            align-items: center;
+            align-items: flex-start;
+            align-items: center;
+            align-items: stretch; */
+            
+
+
+        }
+        .item{
+            width: 100px;
+            height: 100px;
+            background-color: orangered;
+            border: 2px solid rgb(100, 4, 4);
+            margin: 10px;
+            padding: 10px;
+        }
+        #item-1{
+
+       /* flex-grow: 1;
+       flex-shrink: 1; */
+
+
+        }
+        #item-2{
+
+            /* flex-grow: 2;
+            flex-shrink: 2; */
+
+            align-self: flex-start;
+            align-self: flex-end;
+            align-self: center;
+        }
+        #item-3{
+            /* flex-grow: 3; */
+            /* flex-shrink: 3; */
+
+            flex-basis: 300px;
+
+            /* flex shrothand */
+            flex: 2 2 200px;
+
+        }
+    </style>
+
+
+</head>
+<body>
+    <h3>Flexbox in html</h3>
+    <div class="container">
+        <div class="item" id="item-1">First Box</div>
+        <div class="item" id="item-2">Second Box</div>
+        <div class="item" id="item-3">Third Box</div>
+        <!-- <div class="item" id="item-4">Forth Box</div>
+        <div class="item" id="item-5">Fifth Box</div>
+        <div class="item" id="item-6">Sixth Box</div> -->
+
+    </div>
+</body>
+</html>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .box{
+        /* .box{
             display: inline-block;
             border: 2px solid red;
             width: 100px;
@@ -18,31 +18,72 @@
             background-color: greenyellow;
             height: 3000px;
         }
-        #box1{
+        #box1{ */
             /* css position */
             /* position: static;  default */
             /* position: absolute; */
             /* position: relative; */
-        }
-        #box3{
+        /* } */
+        /* #box3{ */
             /* position relative leave a gap */
             /* position: relative; */
 
             /* position absolute not leave a gap. parent position, now you can move this whereever you want */
             /* position: absolute; */
 
-            position: fixed;
-            bottom: 10px;
+            /* position: fixed;
+            bottom: 10px; */
             /* top: 30px;
             left: 30px; */
-        }
+        /* } */
+
+
+            .container{
+                border: 2px solid green;
+                height: 1000px;
+                width: 1000px;
+                background-color: rgb(138, 130, 130);
+            }
+            .box{
+
+            background-color: green;
+            display: inline-block;
+            height: 160px;
+            width: 160px;
+                border: 2px solid black;
+                margin: 10px;
+            
+
+            }
+
+            #box1{
+
+            }
+            #box2{
+                position: relative;
+                top: 20px;
+                /* left: 60px; */
+            }
+            #box3{
+
+            }
+            #box4{
+                position: absolute;
+                top: 20px;
+            }
+            #box5{
+                 position: absolute;
+                 /* left: 20px; */
+            }
+
+
     </style>
 </head>
 <body>
     <div class="container">
         <div class="box" id="box1">1</div>
         <div class="box" id="box2">2</div>
-        <div class="box" id="box3">3 Chat With Us.</div>
+        <div class="box" id="box3">3 </div>
         <div class="box" id="box4">4</div>
         <div class="box" id="box5">5</div>
     </div>
