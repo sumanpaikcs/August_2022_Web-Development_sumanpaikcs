@@ -1,0 +1,84 @@
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/html');
+//   res.end('Hello World');
+  res.end(`<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+  </head>
+  <body>
+      <h3>Form Creation</h3>
+      <form action="backend.php">
+          <label for="name">Name</label>
+  
+              <div>
+                  <input type="text" name="myname" id="name">
+      
+              </div>
+          
+          <!-- <hr> -->
+          <br>
+          <div>
+              Roll: <input type="text" name="myname" id="">
+  
+          </div>
+          <br>
+          <div>
+              Email: <input type="email" name="myemail" id="">
+          </div>
+          <br>
+          <div>
+              Date: <input type="date" name="mydate" id="">
+          </div>
+          <br>
+          <div>
+              My Bonus: <input type="number" name="mybonus" id="">
+          </div>
+          <br>
+          <label for="check">
+  
+              <div>
+                  Are you eligible? <input type="checkbox" name="mycheck" id="check">
+              </div>
+          </label>
+          <br>
+          <div>
+              Male: <input type="radio" name="mygender" id="">
+              Female: <input type="radio" name="mygender" id="">
+              Other: <input type="radio" name="mygender" id="">
+          </div>
+          <br>
+          <div>
+              My Text: <br><textarea name="mytext" id="" cols="30" rows="10"></textarea>
+          </div>
+          <br>
+          <label for="car">Car</label>
+              <select name="mycar" id="car">
+                  <option value="ta">Tata</option>
+                  <option value="bm">BMW</option>
+                  <option value="aud">Audi</option>
+                  <option value="ho" selected>Honda</option>
+              </select>
+         
+          <div>
+              <br>
+           <input type="submit" value="Submit Now">
+           <input type="reset" value="Reset Now">
+          </div>
+      </form>
+  </body>
+  </html>`);
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
