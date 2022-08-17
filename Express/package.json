@@ -1,0 +1,14 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "This is express app",
+  "main": "app.js",
+  "scripts": {
+    "test": "exp"
+  },
+  "author": "Suman Paik",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
