@@ -10,7 +10,7 @@ app.use('/static', express.static('static'))
 app.set('view engine', 'pug');
 
 
-// pug file direcxtory
+// pug file direcxtory      
 app.set('views', path.join(__dirname, 'views'));
 
 // pug demo endpoint
