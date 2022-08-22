@@ -1,0 +1,78 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.navbar{
+    background-color: green;
+    padding: 10px;
+}
+ul{
+    display: flex;
+    list-style: none;
+    padding: 10px;
+    
+}
+li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 13px 10px;
+    margin: 4px 8px;
+    font-size: 20px;
+
+
+}
+a:hover{
+    /* color: yellowgreen; */
+    text-shadow: 2px 2px 2px rgb(41, 40, 40);
+
+}
+
+
+.container{
+    /* background-color: red; */
+    background: url('../static/kara-eads-E2hmaK2ZWqw-unsplash.jpg');
+    background-position: center center;
+    background-size: cover;
+    height: 700px;
+    padding: 50px ;
+    
+}
+input, textarea{
+    display: block;
+    width: 510px;
+    margin: 15px auto;
+    padding: 12px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: rgba(224, 255, 214, 0.864);
+}
+
+.btn{
+    display: block;
+    margin: 30px auto;
+    padding: 15px 30px;
+    font-weight: bold;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(1, 154, 1);
+}
+.btn:hover{
+    background-color: rgba(15, 51, 15, 0.886);
+    color: greenyellow;
+    
+}
+h2{
+    display: block;
+    padding: 5px;
+    margin:  30px auto;
+    width: 100vh;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 2px black;
+    font-size: 50px;
+}

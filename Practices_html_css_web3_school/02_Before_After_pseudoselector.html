@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>after and before</title>
+    <style>
+        .image1{
+            height: 200px;    
+            width: 200px;
+            
+            
+        }
+        .image2{
+            height: 200px;
+            width: 200px;
+            
+            float: right;
+            
+        }
+        .container1{
+            border: 2px solid orange;    
+            margin: 50px;
+        }
+        .container2{
+            border: 2px solid orange;
+            margin: 50px;
+        }
+        .container2::after{
+            content: " ";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <img class="image1" src="https://www.w3schools.com/css/pineapple.jpg" alt="pineapple">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro accusantium deleniti praesentium eveniet impedit. Rerum quam voluptatem maiores blanditiis sint.
+    </div>
+    <div class="container2">
+        <img class="image2" src="https://www.w3schools.com/css/pineapple.jpg" alt="pineapple">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro accusantium deleniti praesentium eveniet impedit. Rerum quam voluptatem maiores blanditiis sint.
+    </div>
+</body>
+</html>
