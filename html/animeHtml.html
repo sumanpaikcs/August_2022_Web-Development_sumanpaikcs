@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charSet="utf-8" />
+    <script>!function () { try { var d = document.documentElement.classList; d.remove('light-theme', 'dark-theme'); var e = localStorage.getItem('zeit-theme'); if ("system" === e || (!e && true)) { var t = "(prefers-color-scheme: dark)", m = window.matchMedia(t); m.media !== t || m.matches ? d.add('dark-theme') : d.add('light-theme') } else if (e) var x = { "light": "light-theme", "dark": "dark-theme" }; d.add(x[e]) } catch (e) { } }()</script>
+    <script>; (function () {
+                try {
+                    if (document.cookie && document.cookie.indexOf('isLoggedIn=1') > -1) {
+                        document.documentElement.classList.add("logged-in-on-page-load")
+                    }
+                } catch (err) { }
+            })()</script>
+    <title>Next.js on Vercel – Vercel</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="en" http-equiv="Content-Language" />
+    <link href="https://vercel.com/solutions/nextjs" rel="canonical" />
+    <link crossorigin="anonymous" href="https://assets.vercel.com" rel="preconnect" />
+    <link crossorigin="anonymous" href="https://avatars.githubusercontent.com" rel="preconnect" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="@vercel" name="twitter:site" />
+    <meta content="https://assets.vercel.com/image/upload/front/solutions/nextjs/og-nextjs.png" name="twitter:image" />
+    <meta content="Next.js on Vercel – Vercel" property="og:title" />
+    <meta content="https://vercel.com/solutions/nextjs" property="og:url" />
+    <meta content="Vercel enables you to develop, preview, and ship every Next.js feature, without configuration."
+        name="description" />
+    <meta content="Vercel enables you to develop, preview, and ship every Next.js feature, without configuration."
+        property="og:description" />
+    <meta content="https://assets.vercel.com/image/upload/front/solutions/nextjs/og-nextjs.png" property="og:image" />
+    <meta content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots" />
+    <meta content="Vercel" name="apple-mobile-web-app-title" />
+    <meta content="var(--geist-background)" name="theme-color" />
+    <meta content="#000000" name="msapplication-TileColor" />
+    <link fetchpriority="low" href="https://assets.vercel.com/image/upload/front/favicon/vercel/57x57.png"
+        rel="apple-touch-icon" sizes="57x57" />
+    <link fetchpriority="low" href="https://assets.vercel.com/image/upload/front/favicon/vercel/60x60.png"
+        rel="apple-touch-icon" sizes="60x60" />
+    <link fetchpriority="low" href="https://assets.vercel.com/image/upload/front/favicon/vercel/72x72.png"
+        rel="apple-touch-icon" sizes="72x72" />
+    <link fetchpriority="low" href="https://assets.vercel.com/image/upload/front/favicon/vercel/76x76.png"
+        rel="apple-touch-icon" sizes="76x76" />
+    <link fetchpriority="low" href="https://assets.vercel.com/image/upload/front/favicon/vercel/114x114.png"
+        rel="apple-touch-icon" sizes="114x114" />
+    <link fetchpriority="low" href="https://assets.vercel.com/image/upload/front/favicon/vercel/120x120.png"
+        rel="apple-touch-icon" sizes="120x120" />
+    <link fetchpriority="low" href="https://assets.vercel.com/image/upload/front/favicon/vercel/144x144.png"
+        rel="apple-touch-icon" sizes="144x144" />
+    <link fetchpriority="low" href="https://assets.vercel.com/image/upload/front/favicon/vercel/152x152.png"
+        rel="apple-touch-icon" sizes="152x152" />
+    <link fetchpriority="low" href="https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png"
+        rel="apple-touch-icon" sizes="180x180" />
+    <link href="https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico" rel="icon shortcut"
+        type="image/x-icon" />
+    <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
+    <link color="#000000" fetchpriority="low"
+        href="https://assets.vercel.com/image/upload/front/favicon/vercel/safari-pinned-tab.svg" rel="mask-icon" />
+    <link href="/atom" rel="alternate" title="Vercel News" type="application/atom+xml" />
+    <script>if (!window.newVisit && document.cookie && document.cookie.indexOf('beenHere=1') !== -1) {
+            document.documentElement.classList.add('inter')
+        } else { window.newVisit = true } setTimeout(function () { document.cookie = 'beenHere=1;samesite=lax;expires=' + new Date(Date.now() + 31 * 3600 * 24 * 1000).toGMTString() })</script>
+    <link as="font" crossorigin="anonymous"
+        href="https://assets.vercel.com/raw/upload/v1660068731/fonts/4/Inter.var.latin.woff2" rel="preload"
+        type="font/woff2" />
+    <script>; (function () {
+                try {
+                    if (+(localStorage.getItem('banner-hidden-experts') || '0')) {
+                        document.documentElement.classList.add("banner-hidden")
+                    }
+                } catch (err) { }
+            })()</script>
+    <script>; (function () { document.documentElement.classList.add('has-banner') })()</script>
+    <script>var w = window; var good = w.CSS && CSS.supports('color', 'var(--v)'); try { const i = 1 } catch (e) { good = 0 }; if (!good && (!w.localStorage || !localStorage.getItem('ignore-browser'))) w.location = '/old-browser.html'</script>
+    <meta name="next-head-count" content="39" />
+    <link rel="preload" href="/_next/static/css/5071f74740a52ab9.css" as="style" />
+    <link rel="stylesheet" href="/_next/static/css/5071f74740a52ab9.css" data-n-g="" />
+    <link rel="preload" href="/_next/static/css/80e92eff262ea21c.css" as="style" />
+    <link rel="stylesheet" href="/_next/static/css/80e92eff262ea21c.css" data-n-p="" />
+    <link rel="preload" href="/_next/static/css/3b3228652b82f1d0.css" as="style" />
+    <link rel="stylesheet" href="/_next/static/css/3b3228652b82f1d0.css" data-n-p="" /><noscript
+        data-n-css=""></noscript>
+    <script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
+    <script src="/_next/static/chunks/webpack-d58afc25ef3e0743.js" defer=""></script>
+    <script src="/_next/static/chunks/framework-5f54267fcf805022.js" defer=""></script>
+    <script src="/_next/static/chunks/main-8b6fca9ccf1b6a29.js" defer=""></script>
+    <script src="/_next/static/chunks/pages/_app-45e10ba2046c8d2d.js" defer=""></script>
+    <script src="/_next/static/chunks/b1c4d607-3aa12752a801b33e.js" defer=""></script>
+    <script src="/_next/static/chunks/88637-ca970aa89b352643.js" defer=""></script>
+    <script src="/_next/static/chunks/147-0acf8a89c7120aa4.js" defer=""></script>
+    <script src="/_next/static/chunks/4957-67a20f02f3b9eefe.js" defer=""></script>
+    <script src="/_next/static/chunks/93005-6b71c5148941bbd5.js" defer=""></script>
+    <script src="/_next/static/chunks/30548-0adbcf703f10af46.js" defer=""></script>
+    <script src="/_next/static/chunks/55792-34dd06decaac1691.js" defer=""></script>
+    <script src="/_next/static/chunks/73413-6ab16dae8142f07c.js" defer=""></script>
+    <script src="/_next/static/chunks/74272-950d3a9a61a8174d.js" defer=""></script>
+    <script src="/_next/static/chunks/92003-bef7f79d79dff7b7.js" defer=""></script>
+    <script src="/_next/static/chunks/pages/solutions/nextjs-0f1ea6408cfeef68.js" defer=""></script>
+    <script src="/_next/static/zuM5dehtcHg8Du1-YiM4h/_buildManifest.js" defer=""></script>
+    <script src="/_next/static/zuM5dehtcHg8Du1-YiM4h/_ssgManifest.js" defer=""></script>
+    <style id="__jsx-1558625419">
+        @media screen and (min-width:961px) {
+            .stack.jsx-1558625419>*+* {
+                margin-left: 8px;
+            }
+        }
+
+        @media screen and (min-width:601px)and (max-width:960px) {
+            .stack.jsx-1558625419>*+* {
+                margin-left: 8px;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            .stack.jsx-1558625419>*+* {
+                margin-left: 8px;
+            }
+        }
+    </style>
+    <style id="__jsx-3685804679">
+        @media screen and (min-width:961px) {
+            .stack.jsx-3685804679>*+* {
+                margin-left: 4px;
+            }
+        }
+
+        @media screen and (min-width:601px)and (max-width:960px) {
+            .stack.jsx-3685804679>*+* {
+                margin-left: 4px;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            .stack.jsx-3685804679>*+* {
+                margin-left: 4px;
+            }
+        }
+    </style>
+    <style id="__jsx-2923788466">
+        @media screen and (min-width:961px) {
+            .stack.jsx-2923788466>*+* {}
+        }
+
+        @media screen and (min-width:601px)and (max-width:960px) {
+            .stack.jsx-2923788466>*+* {}
+        }
+
+        @media screen and (max-width:600px) {
+            .stack.jsx-2923788466>*+* {}
+        }
+    </style>
+    <style id="__jsx-2365101348">
+        @media screen and (min-width:961px) {
+            .stack.jsx-2365101348>*+* {
+                margin-left: 16px;
+            }
+        }
+
+        @media screen and (min-width:601px)and (max-width:960px) {
+            .stack.jsx-2365101348>*+* {
+                margin-left: 16px;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            .stack.jsx-2365101348>*+* {
+                margin-top: 16px;
+            }
+        }
+    </style>
+    <style id="__jsx-499702677">
+        .geist-container.jsx-499702677>* {
+            --gap-ratio: 1
+        }
+    </style>
+    <style id="__jsx-3649535092">
+        @media screen and (min-width:961px) {
+            .stack.jsx-3649535092>*+* {
+                margin-left: 16px;
+            }
+        }
+
+        @media screen and (min-width:601px)and (max-width:960px) {
+            .stack.jsx-3649535092>*+* {
+                margin-left: 16px;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            .stack.jsx-3649535092>*+* {
+                margin-left: 16px;
+            }
+        }
+    </style>
+    <style id="__jsx-1863589687">
+        @media screen and (min-width:961px) {
+            .stack.jsx-1863589687>*+* {
+                margin-left: 40px;
+            }
+        }
+
+        @media screen and (min-width:601px)and (max-width:960px) {
+            .stack.jsx-1863589687>*+* {
+                margin-top: 40px;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            .stack.jsx-1863589687>*+* {
+                margin-top: 40px;
+            }
+        }
+    </style>
+    <style id="__jsx-3015604397">
+        @media screen and (min-width:961px) {
+            .stack.jsx-3015604397>*+* {
+                margin-right: 72px;
+            }
+        }
+
+        @media screen and (min-width:601px)and (max-width:960px) {
+            .stack.jsx-3015604397>*+* {
+                margin-top: 72px;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            .stack.jsx-3015604397>*+* {
+                margin-top: 72px;
+            }
+        }
+    </style>
+    <style id="__jsx-652720182">
+        @media screen and (min-width:961px) {
+            .stack.jsx-652720182>*+* {
+                margin-left: 72px;
+            }
+        }
+
+        @media screen and (min-width:601px)and (max-width:960px) {
+            .stack.jsx-652720182>*+* {
+                margin-top: 72px;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            .stack.jsx-652720182>*+* {
+                margin-top: 72px;
+            }
+        }
+    </style>
+    <style id="__jsx-4170236111">
+        .geist-card.jsx-4170236111 {
+            padding: var(--geist-gap);
+            -webkit-border-radius: var(--geist-radius);
+            -moz-border-radius: var(--geist-radius);
+            border-radius: var(--geist-radius);
+            background: var(--geist-background);
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            transition: box-shadow .2s ease;
+        }
+
+        .jsx-4170236111:hover {
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            z-index: auto
+        }
+    </style>
+    <style id="__jsx-1005237616">
+        .geist-card.jsx-1005237616 {
+            padding: var(--geist-gap);
+            -webkit-border-radius: var(--geist-radius);
+            -moz-border-radius: var(--geist-radius);
+            border-radius: var(--geist-radius);
+            background: var(--geist-background);
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            border: 1px solid var(--accents-2);
+            transition: box-shadow .2s ease;
+        }
+
+        .jsx-1005237616:hover {
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            z-index: auto
+        }
+    </style>
+    <style id="__jsx-2453764976">
+        @media screen and (min-width:961px) {
+            .stack.jsx-2453764976>*+* {
+                margin-left: 12px;
+            }
+        }
+
+        @media screen and (min-width:601px)and (max-width:960px) {
+            .stack.jsx-2453764976>*+* {
+                margin-left: 12px;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            .stack.jsx-2453764976>*+* {
+                margin-left: 12px;
+            }
+        }
+    </style>
+    <style id="__jsx-3195397959">
+        @media screen and (min-width:961px) {
+            .stack.jsx-3195397959>*+* {
+                margin-top: 40px;
+            }
+        }
+
+        @media screen and (min-width:601px)and (max-width:960px) {
+            .stack.jsx-3195397959>*+* {
+                margin-top: 40px;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            .stack.jsx-3195397959>*+* {
+                margin-top: 40px;
+            }
+        }
+    </style>
+    <style id="__jsx-4259094379">
+        p.jsx-4259094379 {
+            font-weight: 800;
+            text-transform: none;
+
+        }
+    </style>
+    <style id="__jsx-1763600012">
+        p.jsx-1763600012 {
+            text-transform: none;
+
+        }
+    </style>
+    <style id="__jsx-3b89f5549ccc7499">
+        .closing.jsx-3b89f5549ccc7499 {
+            background: var(--custom-background, var(--geist-background));
+            padding: -webkit-calc(1.5*var(--geist-gap-double))0;
+            padding: -moz-calc(1.5*var(--geist-gap-double))0;
+            padding: calc(1.5*var(--geist-gap-double))0;
+            border-top: 1px solid var(--accents-2)
+        }
+
+        .closing-buttons.jsx-3b89f5549ccc7499 {
+            margin-left: var(--geist-gap-double)
+        }
+
+        @media(max-width:960px) {
+            .closing.jsx-3b89f5549ccc7499 {
+                padding: var(--geist-gap-double)0
+            }
+
+            .closing.jsx-3b89f5549ccc7499 .text {
+                text-align: center
+            }
+
+            .closing-buttons.jsx-3b89f5549ccc7499 {
+                max-width: 300px;
+                margin: var(--geist-gap-half)auto
+            }
+        }
+    </style>
+</head>
+
+<body><a class="geist-sr-only" href="#reach-skip-nav" data-reach-skip-link="" data-reach-skip-nav-link="">Skip to
+        content</a>
+    <div id="__next">
+        <div class="geist-page"><span class="dark-theme invert-theme"></span>
+            <div class="screen_geist_screen__JT1Q7">
+                <div class="banner_banner___vqIH banner_hidden__2XZ3p" role="banner"><a class="link_old_internal__gEXeD"
+                        href="/experts"><span class="banner_title__gxIX9 geist-hide-on-mobile"></span><span
+                            class="banner_subtitle__4q7_P"></span><span
+                            class="banner_link__himMz banner_link-hide-title-on-mobile__7v2kA banner_hide-title__JUo8N">Get
+                            help from Vercel and Next.js experts →
+                            <!-- -->
+                        </span></a><button aria-label="Hide banner" class="banner_close___AkKx"><svg
+                            data-testid="geist-icon" fill="none" height="18" shape-rendering="geometricPrecision"
+                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            viewBox="0 0 24 24" width="18" style="color:currentColor">
+                            <path d="M18 6L6 18" />
+                            <path d="M6 6l12 12" />
+                        </svg></button></div>
+                <div class="header_wrapper__S9gC_ header_noBorder__2Hvqu">
+                    <header class="header_header__U_Kza" style="--full:var(--geist-page-width-with-margin)">
+                        <div class="header_nav_first__I1THP">
+                            <div><button aria-label="home" class="header_logo__6rx_B"
+                                    data-testid="header/navbar/logo"><svg aria-label="Vercel Logotype"
+                                        fill="var(--geist-foreground)" height="26" viewBox="0 0 284 65">
+                                        <path
+                                            d="M141.68 16.25c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.46 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zm117.14-14.5c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.45 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zm-39.03 3.5c0 6 3.92 10 10 10 4.12 0 7.21-1.87 8.8-4.92l7.68 4.43c-3.18 5.3-9.14 8.49-16.48 8.49-11.05 0-19-7.2-19-18s7.96-18 19-18c7.34 0 13.29 3.19 16.48 8.49l-7.68 4.43c-1.59-3.05-4.68-4.92-8.8-4.92-6.07 0-10 4-10 10zm82.48-29v46h-9v-46h9zM37.59.25l36.95 64H.64l36.95-64zm92.38 5l-27.71 48-27.71-48h10.39l17.32 30 17.32-30h10.39zm58.91 12v9.69c-1-.29-2.06-.49-3.2-.49-5.81 0-10 4-10 10v14.8h-9v-34h9v9.2c0-5.08 5.91-9.2 13.2-9.2z">
+                                        </path>
+                                    </svg></button>
+                                <div data-version="v1"
+                                    style="--flex:initial;--direction:row;--align:center;--justify:flex-start"
+                                    class="jsx-1558625419 stack_stack__A16oG stack"><button
+                                        class="mobile-menu_indicator__d6Glb" data-testid="mobile-menu/trigger">
+                                        <div aria-label="open menu" class="menu-toggle_wrap__volVz "></div>
+                                    </button></div>
+                            </div>
+                        </div>
+                        <div class="header_nav_second__C9hMX">
+                            <ul class="header_nav__q5xvN header_left__Gc2zM header_visible__POQKZ">
+                                <li>
+                                    <div class="popover_details__Ua543 popover_disableTransform__KAtPr"
+                                        data-version="v1">
+                                        <div class="popover_summary__IkAID">
+                                            <div class="popover_trigger__wvDqH"><button
+                                                    class="geist-reset geist-kb-outline header_features-popover__l2eJ_ header_link-padding__O1xLm">
+                                                    <div data-version="v1"
+                                                        style="--flex:initial;--direction:row;--align:center;--justify:flex-start"
+                                                        class="jsx-3685804679 stack_stack__A16oG stack">
+                                                        <span>Features</span><span class="header_chevron__YIJnG"><svg
+                                                                data-testid="geist-icon" fill="none" height="16"
+                                                                shape-rendering="geometricPrecision"
+                                                                stroke="currentColor" stroke-linecap="round"
+                                                                stroke-linejoin="round" stroke-width="1.5"
+                                                                viewBox="0 0 24 24" width="16"
+                                                                style="color:currentColor">
+                                                                <path d="M6 9l6 6 6-6" />
+                                                            </svg></span></div>
+                                                </button></div>
+                                        </div>
+                                        <div aria-hidden="true" class="popover_menu__FJo3U" role="menu"></div>
+                                    </div>
+                                </li>
+                                <li><a class="link_link__LTNaQ link_secondary__Htj2D header_link-padding__O1xLm"
+                                        href="/templates">Templates</a></li>
+                                <li><a class="link_link__LTNaQ link_secondary__Htj2D header_link-padding__O1xLm"
+                                        href="/integrations">Integrations</a></li>
+                                <li><a class="link_link__LTNaQ link_secondary__Htj2D header_link-padding__O1xLm"
+                                        href="/customers">Customers</a></li>
+                                <li><a class="link_link__LTNaQ link_secondary__Htj2D header_link-padding__O1xLm"
+                                        href="/pricing">Pricing</a></li>
+                            </ul>
+                        </div>
+                        <div class="header_nav_third__CGDCP">
+                            <div class="header_right__7DofF header_hidden__FkiUt"><span class="fade-in_fade-in__UFRvA"
+                                    style="box-sizing:border-box">
+                                    <div class="logged-out-profile_wrapper__gbgi_"><a
+                                            class="link_link__LTNaQ link_secondary__Htj2D" href="/contact">Contact</a><a
+                                            class="link_link__LTNaQ link_secondary__Htj2D" href="/login">Login</a><a
+                                            role="button" tabindex="0" href="/signup" type="submit"
+                                            class="button_base__AOyi_ reset_reset__90FTf button_button__dmey4 reset_reset__90FTf button_small__Eazab button_invert__ESQI6"
+                                            data-geist-button="" data-version="v1"><span
+                                                class="button_content__9hWh7">Sign Up</span></a></div>
+                                </span></div>
+                        </div>
+                    </header>
+                </div>
+                <div id="reach-skip-nav" data-reach-skip-nav-content=""></div>
+                <section class="features_hero-wrapper__j7IvC">
+                    <div class="features_gradient-wrapper__Bwqy7" role="region">
+                        <div class="features_gradient__yjWsU features_gradient-1__03C7I"
+                            style="--color:var(--geist-highlight-pink);--light-opacity:0.2;--dark-opacity:0.6"></div>
+                        <div class="features_gradient__yjWsU features_gradient-2__fxrkn"
+                            style="--color:var(--geist-cyan);--light-opacity:0.4;--dark-opacity:0.6"></div>
+                        <div class="features_gradient__yjWsU features_gradient-3__RBDSJ"
+                            style="--color:var(--geist-violet);--light-opacity:0.3;--dark-opacity:0.6"></div>
+                    </div>
+                    <div class="geist-wrapper">
+                        <div data-version="v1" style="--flex:1;--justify-content:flex-start;--align-items:stretch"
+                            class="jsx-499702677 geist-container"><span aria-hidden="true" class="geist-spacer"
+                                data-version="v1" style="margin-top:143px"></span>
+                            <h1 class="features_title__ylCd6">Unlock the full
+                                <!-- --><br class="geist-hide-on-tablet" /> potential of Next.js
+                                <!-- -->
+                            </h1><span aria-hidden="true" class="geist-spacer" data-version="v1"
+                                style="margin-top:47px"></span>
+                            <div class="features_description__gL4y3">
+                                <p class="text_wrapper__aJlSM text_s-24__CrAe_ text_w-400__XA97_ text_center__wcieq"
+                                    data-version="v1" style="--color:var(--geist-foreground)">Vercel enables you to
+                                    develop, preview, and ship every Next.js feature, without configuration.</p>
+                            </div><span aria-hidden="true" class="geist-spacer" data-version="v1"
+                                style="margin-top:47px"></span>
+                            <div class="features_top-ctas__mNgK4">
+                                <div data-version="v1"
+                                    style="--flex:initial;--sm-direction:column;--md-direction:row;--lg-direction:row;--align:stretch;--justify:flex-start"
+                                    class="jsx-2365101348 stack_stack__A16oG stack">
+                                    <div data-version="v1"
+                                        style="--flex:1;--direction:column;--align:stretch;--justify:flex-start"
+                                        class="jsx-2923788466 stack_stack__A16oG stack"><a role="button" tabindex="0"
+                                            href="/new" type="submit"
+                                            class="button_base__AOyi_ reset_reset__90FTf button_button__dmey4 reset_reset__90FTf button_large__FQLqa button_invert__ESQI6"
+                                            data-geist-button="" data-version="v1"><span
+                                                class="button_content__9hWh7">Deploy Now</span></a></div>
+                                    <div data-version="v1"
+                                        style="--flex:1;--direction:column;--align:stretch;--justify:flex-start"
+                                        class="jsx-2923788466 stack_stack__A16oG stack"><a role="button" tabindex="0"
+                                            href="/contact/sales" type="submit"
+                                            class="button_base__AOyi_ reset_reset__90FTf button_button__dmey4 reset_reset__90FTf button_secondary__ZQVAM button_large__FQLqa button_invert__ESQI6"
+                                            data-geist-button="" data-version="v1"><span
+                                                class="button_content__9hWh7">Talk to an Expert</span></a></div>
+                                </div>
+                            </div><span aria-hidden="true" class="geist-spacer" data-version="v1"
+                                style="margin-top:215px"></span>
+                        </div>
+                    </div>
+                </section>
+                <section class="features_summary__H6h_c"><span aria-hidden="true" class="geist-spacer" data-version="v1"
+                        style="margin-top:59px"></span>
+                    <div class="features_summary-wrapper__RFQMB">
+                        <div data-version="v1"
+                            style="--flex:initial;--sm-direction:column;--md-direction:column;--lg-direction:row;--align:stretch;--justify:flex-start"
+                            class="jsx-1863589687 stack_stack__A16oG stack">
+                            <div data-version="v1" style="--flex:1;--direction:row;--align:stretch;--justify:flex-start"
+                                class="jsx-3649535092 stack_stack__A16oG stack">
+                                <div class="features_summary-icon__azJ5c"><svg fill="var(--geist-background)"
+                                        height="24" viewBox="0 0 48 48" width="24">
+                                        <path
+                                            d="M22.428.013c-.103.01-.431.042-.727.066C14.883.693 8.497 4.37 4.453 10.024A23.754 23.754 0 0 0 .216 20.51C.023 21.828 0 22.217 0 24.005c0 1.787.023 2.177.216 3.495 1.304 9.012 7.718 16.584 16.417 19.39 1.558.501 3.2.844 5.068 1.05.727.08 3.87.08 4.598 0 3.224-.356 5.954-1.154 8.648-2.529.412-.21.492-.267.436-.314-.038-.028-1.797-2.388-3.909-5.24l-3.838-5.184-4.809-7.117c-2.646-3.913-4.824-7.112-4.842-7.112-.019-.005-.038 3.157-.047 7.018-.014 6.76-.019 7.033-.103 7.192-.122.23-.216.324-.413.427-.15.075-.282.09-.99.09h-.812l-.216-.137a.878.878 0 0 1-.314-.342l-.099-.211.01-9.407.014-9.41.145-.184c.075-.098.235-.225.347-.286.193-.094.268-.103 1.08-.103.957 0 1.116.038 1.365.31.07.075 2.674 3.997 5.79 8.721s7.376 11.175 9.469 14.342l3.8 5.756.192-.127c1.704-1.107 3.505-2.683 4.932-4.325a23.888 23.888 0 0 0 5.65-12.268c.192-1.319.215-1.708.215-3.495 0-1.788-.023-2.177-.216-3.495-1.304-9.013-7.718-16.584-16.417-19.39C29.832.623 28.199.28 26.369.074c-.45-.047-3.551-.099-3.94-.061zm9.825 14.515a.947.947 0 0 1 .474.554c.038.122.047 2.73.038 8.608l-.014 8.436-1.488-2.28-1.492-2.28v-6.132c0-3.964.019-6.193.047-6.3a.957.957 0 0 1 .465-.592c.192-.098.262-.108 1-.108.694 0 .816.01.97.094z">
+                                        </path>
+                                    </svg></div>
+                                <div>
+                                    <h3 class="text_wrapper__aJlSM text_s-24__CrAe_" data-version="v1"
+                                        style="--color:var(--geist-foreground)">Designed for Next.js
+                                        <!-- -->
+                                    </h3><span aria-hidden="true" class="geist-spacer" data-version="v1"
+                                        style="margin-top:11px"></span>
+                                    <p class="text_wrapper__aJlSM text_s-14__COjdp" data-version="v1"
+                                        style="--color:var(--accents-5)">Developed by the team behind Next.js, Vercel
+                                        will automatically support every Next.js feature, forever.
+                                        <!-- -->
+                                    </p>
+                                </div>
+                            </div>
+                            <div data-version="v1" style="--flex:1;--direction:row;--align:stretch;--justify:flex-start"
+                                class="jsx-3649535092 stack_stack__A16oG stack">
+                                <div class="features_summary-icon__azJ5c"><svg data-testid="geist-icon" fill="none"
+                                        height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        viewBox="0 0 24 24" width="24" style="color:var(--geist-background)">
+                                        <path
+                                            d="M2.625 21.2992L21.2992 2.625M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" />
+                                    </svg></div>
+                                <div>
+                                    <h3 class="text_wrapper__aJlSM text_s-24__CrAe_" data-version="v1"
+                                        style="--color:var(--geist-foreground)">Zero configuration
+                                        <!-- -->
+                                    </h3><span aria-hidden="true" class="geist-spacer" data-version="v1"
+                                        style="margin-top:11px"></span>
+                                    <p class="text_wrapper__aJlSM text_s-14__COjdp" data-version="v1"
+                                        style="--color:var(--accents-5)">Vercel takes the zero-configuration mentality
+                                        of Next.js to the cloud, so you can deploy your app in seconds.
+                                        <!-- -->
+                                    </p>
+                                </div>
+                            </div>
+                            <div data-version="v1" style="--flex:1;--direction:row;--align:stretch;--justify:flex-start"
+                                class="jsx-3649535092 stack_stack__A16oG stack">
+                                <div class="features_summary-icon__azJ5c"><svg data-testid="geist-icon" fill="none"
+                                        height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        viewBox="0 0 24 24" width="24" style="color:var(--geist-background)">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M2 12h20" />
+                                        <path
+                                            d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                                    </svg></div>
+                                <div>
+                                    <h3 class="text_wrapper__aJlSM text_s-24__CrAe_" data-version="v1"
+                                        style="--color:var(--geist-foreground)">Edge, optimized
+                                        <!-- -->
+                                    </h3><span aria-hidden="true" class="geist-spacer" data-version="v1"
+                                        style="margin-top:11px"></span>
+                                    <p class="text_wrapper__aJlSM text_s-14__COjdp" data-version="v1"
+                                        style="--color:var(--accents-5)">Vercel’s infrastructure is built to amplify the
+                                        capabilities of Next.js at the edge.
+                                        <!-- -->
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><span aria-hidden="true" class="geist-spacer" data-version="v1"
+                        style="margin-top:59px"></span>
+                </section>
+                <div class="features_overflow-hidden__7tzcQ">
+                    <section class="nextjs_center-container__pLLfQ"><span aria-hidden="true" class="geist-spacer"
+                            data-version="v1" style="margin-top:191px"></span>
+                        <div data-version="v1"
+                            style="--flex:initial;--sm-direction:column;--md-direction:column;--lg-direction:row-reverse;--align:center;--justify:flex-start"
+                            class="jsx-3015604397 stack_stack__A16oG stack">
+                            <div class="features_text-align-center-on-tablet__86CRd">
+                                <h3 class="text_wrapper__aJlSM text_s-40__NAUDm text_w-700__BJEFg" data-version="v1"
+                                    style="--color:var(--geist-foreground)">Just deploy</h3><span aria-hidden="true"
+                                    class="geist-spacer" data-version="v1"></span>
+                                <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-400__XA97_ text_lh-32__iP9gT"
+                                    data-version="v1" style="--color:var(--accents-5)">The deep integration between
+                                    Next.js and Vercel’s Edge Network allows you to preview, test, and deploy your app
+                                    without worrying about infrastructure.</p><span aria-hidden="true"
+                                    class="geist-spacer" data-version="v1" style="margin-top:35px"></span>
+                                <div class="features_cta-button__rlblZ"><a role="button" tabindex="0"
+                                        href="/features/previews" type="submit"
+                                        class="button_base__AOyi_ reset_reset__90FTf button_button__dmey4 reset_reset__90FTf button_large__FQLqa button_invert__ESQI6"
+                                        data-geist-button="" data-version="v1"><span class="button_content__9hWh7">Learn
+                                            More</span></a></div>
+                            </div>
+                            <div class="features_graphic-flex-shrink__xb7iD">
+                                <div class="features_graphic-light___dqdQ nextjs_top-graphic-light__vVQI_">
+                                    <div class="nextjs_top-graphic-light-gradient-1__zpIju"></div>
+                                    <div class="nextjs_top-graphic-light-gradient-2__c72nw"></div><img alt="Just deploy"
+                                        data-version="v1"
+                                        srcSet="https://assets.vercel.com/image/upload/front/features/enterprise/enterprise-1-light-1.svg 1x, https://assets.vercel.com/image/upload/front/features/enterprise/enterprise-1-light-1.svg 2x"
+                                        src="https://assets.vercel.com/image/upload/front/features/enterprise/enterprise-1-light-1.svg"
+                                        width="480" height="312" decoding="async" data-nimg="future"
+                                        class="image_intrinsic__rcqFQ" loading="lazy"
+                                        style="color:transparent;background-size:cover;background-position:50% 50%;background-repeat:no-repeat;background-image:url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns=&#x27;http%3A//www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 480 312&#x27;%3E%3Cfilter id=&#x27;b&#x27; color-interpolation-filters=&#x27;sRGB&#x27;%3E%3CfeGaussianBlur stdDeviation=&#x27;20&#x27;/%3E%3C/filter%3E%3Cimage filter=&#x27;url(%23b)&#x27; x=&#x27;0&#x27; y=&#x27;0&#x27; height=&#x27;100%25&#x27; width=&#x27;100%25&#x27; href=&#x27;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAMAAAA7+k+nAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAh1BMVEX/9fT////9/f3////////x9Nnx/PP////7+/vv7+/z8/P+/v79/f35+fn8/Pz6Yu35OOjh4eHw8PDp6en9t/f7fvDv6P3q4f3q4fzj1/z09PT39/f//v7/3an/3Kj/4K389/b4+Pj7+vr6+vr6+fn29vb4N+j5Uev+1Pr7jfL8m/T/8P7+4vyEkElVAAAABXRSTlP9/f7+7wMTMScAAAABYktHRAH/Ai3eAAAAB3RJTUUH5QsEBAohw2DW3wAAAIpJREFUGNN10NsOwiAMBuA6plVhc7iJ6NQ58azv/3xy8IKl7AsXpH9KWgCmM8T5IrJEawIZt0QRKV0lA4ZJDNiq+t+lXNeyDscFzWakQ209RQK98zTunZYGh+OpO5d9ouNiriYQw+AWFCRobbU3hpOnRqe6P6rnYA/tKWxe708cIH4F53TzPP2J+Q+x+xUsycNnGwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0xMS0wNFQwNDoxMDozMyswMDowMMNQXYMAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMTEtMDRUMDQ6MTA6MzMrMDA6MDCyDeU/AAAAAElFTkSuQmCC&#x27;/%3E%3C/svg%3E&quot;)" /><noscript><img
+                                            alt="Just deploy" data-version="v1"
+                                            srcSet="https://assets.vercel.com/image/upload/front/features/enterprise/enterprise-1-light-1.svg 1x, https://assets.vercel.com/image/upload/front/features/enterprise/enterprise-1-light-1.svg 2x"
+                                            src="https://assets.vercel.com/image/upload/front/features/enterprise/enterprise-1-light-1.svg"
+                                            width="480" height="312" decoding="async" data-nimg="future"
+                                            style="color:transparent" class="image_intrinsic__rcqFQ"
+                                            loading="lazy" /></noscript>
+                                </div>
+                                <div class="features_graphic-dark__eYXfD nextjs_top-graphic-dark__zwI4W">
+                                    <div class="nextjs_top-graphic-dark-gradient__wPzAd"></div><img alt="Just deploy"
+                                        data-version="v1"
+                                        srcSet="https://assets.vercel.com/image/upload/front/features/enterprise/enterprise-1-dark-1.svg 1x, https://assets.vercel.com/image/upload/front/features/enterprise/enterprise-1-dark-1.svg 2x"
+                                        src="https://assets.vercel.com/image/upload/front/features/enterprise/enterprise-1-dark-1.svg"
+                                        width="480" height="312" decoding="async" data-nimg="future"
+                                        class="image_intrinsic__rcqFQ" loading="lazy"
+                                        style="color:transparent;background-size:cover;background-position:50% 50%;background-repeat:no-repeat;background-image:url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns=&#x27;http%3A//www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 480 312&#x27;%3E%3Cfilter id=&#x27;b&#x27; color-interpolation-filters=&#x27;sRGB&#x27;%3E%3CfeGaussianBlur stdDeviation=&#x27;20&#x27;/%3E%3C/filter%3E%3Cimage filter=&#x27;url(%23b)&#x27; x=&#x27;0&#x27; y=&#x27;0&#x27; height=&#x27;100%25&#x27; width=&#x27;100%25&#x27; href=&#x27;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAMAAAA7+k+nAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAmVBMVEUSBwYiJQkCDgQAAAAHBwcfHx8YGBgAAAAAAAABAQEAAACVEIq4FKoYGBgMDAwSEhJJB0N+DXR+bGyhiouii4vOsbIfHx8XFxdMLwBLLwBJLwAIBQUEBAQLCwsMDAwPDw8HBwcaGhoSEhIYGBgUFBQEBATeGc44BjNaCVOJEH97DnIUARIAEB0AAAABAQEAAAD5Uev5OOj///8EmUmwAAAAMHRSTlPn8O7t7/j15t3MzOjw1tHT2ePj6+v14NvZ2djT0tjT1tHe2NvazvnV3Obiz9HAzcECJfHUAAAAAWJLR0QyQNJMyAAAAAd0SU1FB+ULBAQKIcNg1t8AAACCSURBVBjTY2BgZGJmZmFFAmzMQMDOwIEDMHByYQWcDJzcPFA2Ly8fPy8/BIEkBARx6BASBgMhDAkRUTAQ4RIDAXEsEhKSUtIyslgk5ORhQAFVQhEClDAklIGiKvLyqhhG4XSVmoGhOoo/RMBAiEtDU0sbWYKLS0dBVRXT57p6WIE+AIp6GXHFOpgBAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIxLTExLTA0VDA0OjEwOjMzKzAwOjAww1BdgwAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMS0xMS0wNFQwNDoxMDozMyswMDowMLIN5T8AAAAASUVORK5CYII=&#x27;/%3E%3C/svg%3E&quot;)" /><noscript><img
+                                            alt="Just deploy" data-version="v1"
+                                            srcSet="https://assets.vercel.com/image/upload/front/features/enterprise/enterprise-1-dark-1.svg 1x, https://assets.vercel.com/image/upload/front/features/enterprise/enterprise-1-dark-1.svg 2x"
+                                            src="https://assets.vercel.com/image/upload/front/features/enterprise/enterprise-1-dark-1.svg"
+                                            width="480" height="312" decoding="async" data-nimg="future"
+                                            style="color:transparent" class="image_intrinsic__rcqFQ"
+                                            loading="lazy" /></noscript>
+                                </div>
+                            </div>
+                        </div><span aria-hidden="true" class="geist-spacer" data-version="v1"
+                            style="margin-top:191px"></span>
+                        <div data-version="v1"
+                            style="--flex:initial;--sm-direction:column;--md-direction:column;--lg-direction:row;--align:center;--justify:flex-start"
+                            class="jsx-652720182 stack_stack__A16oG stack">
+                            <div class="features_text-align-center-on-tablet__86CRd">
+                                <h3 class="text_wrapper__aJlSM text_s-40__NAUDm text_w-700__BJEFg" data-version="v1"
+                                    style="--color:var(--geist-foreground)">Fast gets faster</h3><span
+                                    aria-hidden="true" class="geist-spacer" data-version="v1"></span>
+                                <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-400__XA97_ text_lh-32__iP9gT"
+                                    data-version="v1" style="--color:var(--accents-5)">Performance optimizations built
+                                    into Next.js are automatically supported and enhanced on Vercel, creating smooth,
+                                    interactive experiences that feel instant for every user.</p><span
+                                    aria-hidden="true" class="geist-spacer" data-version="v1"
+                                    style="margin-top:35px"></span>
+                                <div class="features_cta-button__rlblZ"><a role="button" tabindex="0" href="/analytics"
+                                        type="submit"
+                                        class="button_base__AOyi_ reset_reset__90FTf button_button__dmey4 reset_reset__90FTf button_large__FQLqa button_invert__ESQI6"
+                                        data-geist-button="" data-version="v1"><span
+                                            class="button_content__9hWh7">Explore Analytics</span></a></div>
+                            </div>
+                            <div class="features_graphic-flex-shrink__xb7iD">
+                                <div class="features_graphic-light___dqdQ nextjs_top-graphic-light__vVQI_">
+                                    <div class="nextjs_faster-graphic-gradient-adjust__xv_eG">
+                                        <div class="nextjs_top-graphic-light-gradient-1__zpIju"></div>
+                                        <div class="nextjs_top-graphic-light-gradient-2__c72nw"></div>
+                                    </div>
+                                    <div class="nextjs_faster-graphic-adjust__plwES"><img alt="Fast gets faster"
+                                            data-version="v1"
+                                            srcSet="https://assets.vercel.com/image/upload/front/solutions/nextjs/nextjs-faster-light-1.svg 1x, https://assets.vercel.com/image/upload/front/solutions/nextjs/nextjs-faster-light-1.svg 2x"
+                                            src="https://assets.vercel.com/image/upload/front/solutions/nextjs/nextjs-faster-light-1.svg"
+                                            width="480" height="487" decoding="async" data-nimg="future"
+                                            class="image_intrinsic__rcqFQ" loading="lazy"
+                                            style="color:transparent;background-size:cover;background-position:50% 50%;background-repeat:no-repeat;background-image:url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns=&#x27;http%3A//www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 480 487&#x27;%3E%3Cfilter id=&#x27;b&#x27; color-interpolation-filters=&#x27;sRGB&#x27;%3E%3CfeGaussianBlur stdDeviation=&#x27;20&#x27;/%3E%3C/filter%3E%3Cimage filter=&#x27;url(%23b)&#x27; x=&#x27;0&#x27; y=&#x27;0&#x27; height=&#x27;100%25&#x27; width=&#x27;100%25&#x27; href=&#x27;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB1FBMVEUAAAD/9fT////////+/v7////+/v78/Pz39/fv7+/L4dRpzpuI3rJ52qls0Z7+/v4AAAD///+AgIAzMzMVFRUMFxcDnk4IuF4DnE0AAAAAAAAADQ0AShsAp1EGtl1q16AARRUAAAAAAAAAAAAACwsALQ8AmUgCplICrVYAAAAAAAAAAAAAAAAAAAAAMRAAYy4AAAAAAAAAAAAAAAAAAADx+Obx/PP////7+/vy8vL19fXLy8utra34+Pienp6IiIjp6emlpaXw8PDh4eHa2tr+/v79/f38/Pz29vb09PTz8/P6+vrv9fHY8eO55c665s/P6Nrl6+fu7u739/fx8vLv8fDO6NmX37pt1Z9FzohM0Ixp0ZuS2rXG4NHo6unu7+/o6em738x42KlU0pIYuGcKslzR8eGx58xFzId2zqK81cfd3t7j4+Pn5+fq6urt7e3c4N070YUy04DC7NYnwXQLuWA3xX43yH6I0KvT19Tg4ODm5ubS59xN0o6j5MNGyYYZuWgou3GT37lpy5nA1crf39+84s9c0pUKu2CE2a900qKU27d11KTC7Ne+49HG5dRj0prC7dcKvGE4wnxlzppXyY9Hx4Z11qQKu2KD264oxXSz6s4U0SA9AAAANXRSTlMA+/v+/rLCwsPEy+L+/uGyAQICBQwWX6ldBAoTJm6h8CUDCRAXIlV2egIGCxMWHywMDhIFB/+3B+MAAAABYktHRAJmC3xkAAAAB3RJTUUH5QsEBBYUc6RPoQAAASBJREFUGBl1wcEuA1EYhuH3O/M3ZhRtiY0l6Upiw7VZWdq5JGuLxh1IxE6EhaPVTnWmfmemoYnwPNKZhMSalsCthQC480sI/M0D/zDApAW/GZBJNDodkD6hqsAACxMaVcWaAVPYQXoDeu6MaRgwkCY7496+GrHcrceAAd1ZPFBXK1t6mffewIDnJVta25ZGYEA3DNVCcaDkBjBgGe9O1cCLTNLsZARGsve5qYdDJXVnsXEdFoDRKnSsRu2Z01JHqHWle478XLUnFNYVai3yIf64qaUnuIB+odYFl+5Z5V5GENAfaAVfeY1gJLk0zyXh7mXuTpIB89qsLrL3IkyK8GHlSwSMJJKXA/kTeeblxmskMRoRZrjjU8oy0hA/+kDk2xegP3PPw6OtkAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0xMS0wNFQwNDoyMjoyMCswMDowMKMF8bwAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMTEtMDRUMDQ6MjI6MjArMDA6MDDSWEkAAAAAAElFTkSuQmCC&#x27;/%3E%3C/svg%3E&quot;)" /><noscript><img
+                                                alt="Fast gets faster" data-version="v1"
+                                                srcSet="https://assets.vercel.com/image/upload/front/solutions/nextjs/nextjs-faster-light-1.svg 1x, https://assets.vercel.com/image/upload/front/solutions/nextjs/nextjs-faster-light-1.svg 2x"
+                                                src="https://assets.vercel.com/image/upload/front/solutions/nextjs/nextjs-faster-light-1.svg"
+                                                width="480" height="487" decoding="async" data-nimg="future"
+                                                style="color:transparent" class="image_intrinsic__rcqFQ"
+                                                loading="lazy" /></noscript></div>
+                                </div>
+                                <div class="features_graphic-dark__eYXfD nextjs_top-graphic-dark__zwI4W">
+                                    <div class="nextjs_faster-graphic-gradient-adjust__xv_eG">
+                                        <div class="nextjs_top-graphic-dark-gradient__wPzAd"></div>
+                                    </div>
+                                    <div class="nextjs_faster-graphic-adjust__plwES"><img alt="Fast gets faster"
+                                            data-version="v1"
+                                            srcSet="https://assets.vercel.com/image/upload/front/solutions/nextjs/nextjs-faster-dark-1.svg 1x, https://assets.vercel.com/image/upload/front/solutions/nextjs/nextjs-faster-dark-1.svg 2x"
+                                            src="https://assets.vercel.com/image/upload/front/solutions/nextjs/nextjs-faster-dark-1.svg"
+                                            width="480" height="487" decoding="async" data-nimg="future"
+                                            class="image_intrinsic__rcqFQ" loading="lazy"
+                                            style="color:transparent;background-size:cover;background-position:50% 50%;background-repeat:no-repeat;background-image:url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns=&#x27;http%3A//www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 480 487&#x27;%3E%3Cfilter id=&#x27;b&#x27; color-interpolation-filters=&#x27;sRGB&#x27;%3E%3CfeGaussianBlur stdDeviation=&#x27;20&#x27;/%3E%3C/filter%3E%3Cimage filter=&#x27;url(%23b)&#x27; x=&#x27;0&#x27; y=&#x27;0&#x27; height=&#x27;100%25&#x27; width=&#x27;100%25&#x27; href=&#x27;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB71BMVEUAAAASBwYSGgYCDgQAAAAHBwcfHx8YGBgAAAAAAAABAQEAAAAzMzNLS0sHBwdWVlYXFxdQUFAQEBAdHR0lJSUZGRkbGxsKCgoAAAAABwIAHg0/blU+blVGYVJPVVFRUVFSUlJUVFRJSUkSEhIXFxcPDw8PEBAGCAcAHw0BUykEdjsUolkZoVshjlUqd087V0dGSEdHSEhCQkIsLCwXFxcODg4REREICAgVFhYNNSABazc1tnWQkJAVFRUUFBQYHRkLpFcmyHQAAAAAGQwEkkmRkZEALRYFhEIAKxYAJREEfEAAAAACAgIAAAAAAAAAAAAAGQoBcDeF269216UBbzcAAAAAAAAAAAAAAAAADAwAnEsIuF4AmkoAAAAAAAAADQ0AShsAp1EGtl1q16AARRUAAAAAAAAAAAAACwsALQ8AmUgCplICrVYAAAAAAAAAAAAAAAAAMRAAYy4AAAAAAAAAAABmZmYYuGcKslzR8eGx58w6wXxNpXl7lIaQkZGUlJSXl5fC7NYnwXQLuWA3xX4rvHJZoXyKjouTk5OWlpaYmJij5MNGyYYZuWgou3GT37lFp3V+k4iSkpIKu2CE2a900qKU27d11KTC7NfC7dcKvGE4wnxlzppXyY9Hx4Z11qQKu2KD264oxXSz6s7///995BGJAAAAdnRSTlMA5+/u7e/49ebVzMzi78/21fPS2dzi5dXNz9Ps6+nm5eXl4t3i29zU1eHq9vfz7ufj4t/Y0trd1uPl6Pn83+Do+v7O1fD82e7Z1+yPnJydoKzP/v3PAQIFDBZfqV0EChMmbqHwJQMJEBciVXZ6BgsTFh8sDhIH7TbDuwAAAAFiS0dEpFm+erkAAAAHdElNRQflCwQEFhRzpE+hAAABFElEQVQYGXXBvUpcQQCG4febGc8ZF02iTUAIEXIRNhZ2KYJ2exFe2yls7LSwTWM6cwGploBwCOuOP8uXOQdcMW6eRwMkXmgJJG2yXpJYx4H/CIBC5I0AxNPAIDRN0+amaQKgiWjDgn85AfeskYCJkNDKjCoB7/Tajn5CAnY1OtSzSyABGVVHEppvqTr5AQm45kD6KgnnKGlxASSqbaJu91Q9bZzp4eYPkBhF7WsQHc1I34RGx/rFJ5/ryRVOE4EGD/kz/p21tA0WMM0aHXFlx0e7dJCoskbfybajXYBE1X/UfSsJ26X1jCoAnYs9i3ch3MWZXdwBkermy9zLD6Wfp83efemoxGiKeF/IPaZjIFamQMezv47nXP+4Y4sUAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIxLTExLTA0VDA0OjIyOjIwKzAwOjAwowXxvAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMS0xMS0wNFQwNDoyMjoyMCswMDowMNJYSQAAAAAASUVORK5CYII=&#x27;/%3E%3C/svg%3E&quot;)" /><noscript><img
+                                                alt="Fast gets faster" data-version="v1"
+                                                srcSet="https://assets.vercel.com/image/upload/front/solutions/nextjs/nextjs-faster-dark-1.svg 1x, https://assets.vercel.com/image/upload/front/solutions/nextjs/nextjs-faster-dark-1.svg 2x"
+                                                src="https://assets.vercel.com/image/upload/front/solutions/nextjs/nextjs-faster-dark-1.svg"
+                                                width="480" height="487" decoding="async" data-nimg="future"
+                                                style="color:transparent" class="image_intrinsic__rcqFQ"
+                                                loading="lazy" /></noscript></div>
+                                </div>
+                            </div>
+                        </div><span aria-hidden="true" class="geist-spacer" data-version="v1"
+                            style="margin-top:191px"></span>
+                        <div>
+                            <h3 class="text_wrapper__aJlSM text_s-40__NAUDm text_center__wcieq" data-version="v1"
+                                style="--color:var(--geist-foreground)">Out-of-the-box features</h3><span
+                                aria-hidden="true" class="geist-spacer" data-version="v1"></span>
+                            <div class="nextjs_bottom-description__FaIkQ">
+                                <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-400__XA97_ text_lh-32__iP9gT text_center__wcieq"
+                                    data-version="v1" style="--color:var(--accents-5)">Vercel provides everything you
+                                    need to deploy and optimize your Next.js app for production, with zero configuration
+                                    needed.</p>
+                            </div><span aria-hidden="true" class="geist-spacer" data-version="v1"
+                                style="margin-top:35px"></span>
+                            <div class="features_cta-button__rlblZ nextjs_bottom-cta__R4m8T"><a role="button"
+                                    tabindex="0" href="/pricing" type="submit"
+                                    class="button_base__AOyi_ reset_reset__90FTf button_button__dmey4 reset_reset__90FTf button_large__FQLqa button_invert__ESQI6"
+                                    data-geist-button="" data-version="v1"><span class="button_content__9hWh7">Compare
+                                        Plans</span></a></div><span aria-hidden="true" class="geist-spacer"
+                                data-version="v1" style="margin-top:95px"></span>
+                            <div class="cards_cards__swp_P">
+                                <div data-version="v1"
+                                    style="--flex:1;--justify-content:flex-start;--align-items:stretch"
+                                    class="jsx-499702677 geist-container geist-card jsx-4170236111 cards_card-shadow__xo2XU">
+                                    <div data-version="v1"
+                                        style="--flex:1;--direction:column;--align:stretch;--justify:flex-start"
+                                        class="jsx-2923788466 stack_stack__A16oG stack">
+                                        <div data-version="v1"
+                                            style="--flex:initial;--direction:row;--align:center;--justify:flex-start"
+                                            class="jsx-1558625419 stack_stack__A16oG stack">
+                                            <div class="cards_icon__pa5SA cards_icon-featured__hIf7R"><svg
+                                                    data-testid="geist-icon" fill="none" height="24"
+                                                    shape-rendering="geometricPrecision" stroke="currentColor"
+                                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                                    viewBox="0 0 24 24" width="24" style="color:var(--geist-background">
+                                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                                    <path d="M7 11V7a5 5 0 0110 0v4" />
+                                                </svg></div>
+                                            <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-600__hi7Y9"
+                                                data-version="v1" style="--color:var(--geist-foreground)">Automatic SSL
+                                            </p>
+                                        </div>
+                                        <div class="cards_content__kYtUw"><span aria-hidden="true" class="geist-spacer"
+                                                data-version="v1"></span>
+                                            <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                                data-version="v1" style="--color:var(--accents-5)">Vercel automatically
+                                                aliases your chosen domain name to the latest deployment and ensures
+                                                fresh certificates are installed.
+                                                <!-- -->
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div><span aria-hidden="true" class="geist-spacer" data-version="v1"></span>
+                                        <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                            data-version="v1" style="--color:var(--geist-violet-light)"><a
+                                                class="link_link__LTNaQ"
+                                                href="/docs/concepts/edge-network/encryption">Documentation →</a></p>
+                                    </div>
+                                </div>
+                                <div data-version="v1"
+                                    style="--flex:1;--justify-content:flex-start;--align-items:stretch"
+                                    class="jsx-499702677 geist-container geist-card jsx-4170236111 cards_card-shadow__xo2XU">
+                                    <div data-version="v1"
+                                        style="--flex:1;--direction:column;--align:stretch;--justify:flex-start"
+                                        class="jsx-2923788466 stack_stack__A16oG stack">
+                                        <div data-version="v1"
+                                            style="--flex:initial;--direction:row;--align:center;--justify:flex-start"
+                                            class="jsx-1558625419 stack_stack__A16oG stack">
+                                            <div class="cards_icon__pa5SA cards_icon-featured__hIf7R"><svg
+                                                    data-testid="geist-icon" fill="none" height="24"
+                                                    shape-rendering="geometricPrecision" stroke="currentColor"
+                                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                                    viewBox="0 0 24 24" width="24"
+                                                    style="color:var(--geist-background)">
+                                                    <circle cx="12" cy="12" r="10" />
+                                                    <path d="M22 12h-4" />
+                                                    <path d="M6 12H2" />
+                                                    <path d="M12 6V2" />
+                                                    <path d="M12 22v-4" />
+                                                </svg></div>
+                                            <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-600__hi7Y9"
+                                                data-version="v1" style="--color:var(--geist-foreground)">Edge Functions
+                                            </p>
+                                        </div>
+                                        <div class="cards_content__kYtUw"><span aria-hidden="true" class="geist-spacer"
+                                                data-version="v1"></span>
+                                            <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                                data-version="v1" style="--color:var(--accents-5)">Dynamically route
+                                                pages at the Edge with Middleware, deployed globally by default on
+                                                Vercel with Edge Functions.
+                                                <!-- -->
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div><span aria-hidden="true" class="geist-spacer" data-version="v1"></span>
+                                        <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                            data-version="v1" style="--color:var(--geist-violet-light)"><a
+                                                class="link_link__LTNaQ"
+                                                href="/docs/concepts/functions/edge-functions">Documentation →</a></p>
+                                    </div>
+                                </div>
+                                <div data-version="v1"
+                                    style="--flex:1;--justify-content:flex-start;--align-items:stretch"
+                                    class="jsx-499702677 geist-container geist-card jsx-4170236111 cards_card-shadow__xo2XU">
+                                    <div data-version="v1"
+                                        style="--flex:1;--direction:column;--align:stretch;--justify:flex-start"
+                                        class="jsx-2923788466 stack_stack__A16oG stack">
+                                        <div data-version="v1"
+                                            style="--flex:initial;--direction:row;--align:center;--justify:flex-start"
+                                            class="jsx-1558625419 stack_stack__A16oG stack">
+                                            <div class="cards_icon__pa5SA cards_icon-featured__hIf7R"><svg
+                                                    data-testid="geist-icon" fill="none" height="24"
+                                                    shape-rendering="geometricPrecision" stroke="currentColor"
+                                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                                    viewBox="0 0 24 24" width="24"
+                                                    style="color:var(--geist-background)">
+                                                    <circle cx="12" cy="12" r="3" />
+                                                    <path
+                                                        d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
+                                                </svg></div>
+                                            <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-600__hi7Y9"
+                                                data-version="v1" style="--color:var(--geist-foreground)">Hosting
+                                                configuration</p>
+                                        </div>
+                                        <div class="cards_content__kYtUw"><span aria-hidden="true" class="geist-spacer"
+                                                data-version="v1"></span>
+                                            <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                                data-version="v1" style="--color:var(--accents-5)">Easily configure your
+                                                DNS settings, create custom domains, launch custom error pages, and
+                                                customize headers.
+                                                <!-- -->
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div><span aria-hidden="true" class="geist-spacer" data-version="v1"></span>
+                                        <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                            data-version="v1" style="--color:var(--geist-violet-light)"><a
+                                                class="link_link__LTNaQ"
+                                                href="/docs/concepts/projects/overview">Documentation →</a></p>
+                                    </div>
+                                </div>
+                                <div data-version="v1"
+                                    style="--flex:1;--justify-content:flex-start;--align-items:stretch"
+                                    class="jsx-499702677 geist-container geist-card jsx-1005237616">
+                                    <div data-version="v1"
+                                        style="--flex:1;--direction:column;--align:stretch;--justify:flex-start"
+                                        class="jsx-2923788466 stack_stack__A16oG stack">
+                                        <div data-version="v1"
+                                            style="--flex:initial;--direction:row;--align:center;--justify:flex-start"
+                                            class="jsx-1558625419 stack_stack__A16oG stack">
+                                            <div class="cards_icon__pa5SA"><svg data-testid="geist-icon" fill="none"
+                                                    height="24" shape-rendering="geometricPrecision"
+                                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="1.5" viewBox="0 0 24 24" width="24"
+                                                    style="color:var(--geist-violet-light)">
+                                                    <circle cx="18" cy="18" r="3" />
+                                                    <circle cx="6" cy="6" r="3" />
+                                                    <path d="M13 6h3a2 2 0 012 2v7" />
+                                                    <path d="M6 9v12" />
+                                                </svg></div>
+                                            <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-600__hi7Y9"
+                                                data-version="v1" style="--color:var(--geist-foreground)">Git
+                                                integration</p>
+                                        </div>
+                                        <div class="cards_content__kYtUw"><span aria-hidden="true" class="geist-spacer"
+                                                data-version="v1"></span>
+                                            <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                                data-version="v1" style="--color:var(--accents-5)">Import your Git
+                                                repository with one click, then push your app to our global Edge
+                                                Network. Every time you make a pull or merge request, Vercel creates a
+                                                unique deployment.
+                                                <!-- -->
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div><span aria-hidden="true" class="geist-spacer" data-version="v1"></span>
+                                        <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                            data-version="v1" style="--color:var(--geist-violet-light)"><a
+                                                class="link_link__LTNaQ" href="/docs/concepts/git">Documentation →</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div data-version="v1"
+                                    style="--flex:1;--justify-content:flex-start;--align-items:stretch"
+                                    class="jsx-499702677 geist-container geist-card jsx-1005237616">
+                                    <div data-version="v1"
+                                        style="--flex:1;--direction:column;--align:stretch;--justify:flex-start"
+                                        class="jsx-2923788466 stack_stack__A16oG stack">
+                                        <div data-version="v1"
+                                            style="--flex:initial;--direction:row;--align:center;--justify:flex-start"
+                                            class="jsx-1558625419 stack_stack__A16oG stack">
+                                            <div class="cards_icon__pa5SA"><svg data-testid="geist-icon" fill="none"
+                                                    height="24" shape-rendering="geometricPrecision"
+                                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="1.5" viewBox="0 0 24 24" width="24"
+                                                    style="color:var(--geist-violet-light)">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                                    <circle cx="12" cy="12" r="3" />
+                                                </svg></div>
+                                            <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-600__hi7Y9"
+                                                data-version="v1" style="--color:var(--geist-foreground)">Preview mode
+                                            </p>
+                                        </div>
+                                        <div class="cards_content__kYtUw"><span aria-hidden="true" class="geist-spacer"
+                                                data-version="v1"></span>
+                                            <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                                data-version="v1" style="--color:var(--accents-5)">Securely preview your
+                                                app on the same global cloud infrastructure as your production
+                                                deployment with every Git push.
+                                                <!-- -->
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div><span aria-hidden="true" class="geist-spacer" data-version="v1"></span>
+                                        <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                            data-version="v1" style="--color:var(--geist-violet-light)"><a
+                                                class="link_link__LTNaQ"
+                                                href="/docs/concepts/next.js/preview-mode">Documentation →</a></p>
+                                    </div>
+                                </div>
+                                <div data-version="v1"
+                                    style="--flex:1;--justify-content:flex-start;--align-items:stretch"
+                                    class="jsx-499702677 geist-container geist-card jsx-1005237616">
+                                    <div data-version="v1"
+                                        style="--flex:1;--direction:column;--align:stretch;--justify:flex-start"
+                                        class="jsx-2923788466 stack_stack__A16oG stack">
+                                        <div data-version="v1"
+                                            style="--flex:initial;--direction:row;--align:center;--justify:flex-start"
+                                            class="jsx-1558625419 stack_stack__A16oG stack">
+                                            <div class="cards_icon__pa5SA"><svg data-testid="geist-icon" fill="none"
+                                                    height="24" shape-rendering="geometricPrecision"
+                                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="1.5" viewBox="0 0 24 24" width="24"
+                                                    style="color:var(--geist-violet-light)">
+                                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                                                    <path d="M22 4L12 14.01l-3-3" />
+                                                </svg></div>
+                                            <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-600__hi7Y9"
+                                                data-version="v1" style="--color:var(--geist-foreground)">Vercel Checks
+                                            </p>
+                                        </div>
+                                        <div class="cards_content__kYtUw"><span aria-hidden="true" class="geist-spacer"
+                                                data-version="v1"></span>
+                                            <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                                data-version="v1" style="--color:var(--accents-5)">Run automated tests
+                                                for performance and reliability on every pull request and block merging
+                                                unless performance budgets and tests pass.
+                                                <!-- -->
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div><span aria-hidden="true" class="geist-spacer" data-version="v1"></span>
+                                        <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                            data-version="v1" style="--color:var(--geist-violet-light)"><a
+                                                href="/docs/concepts/deployments/checks" rel="noopener" target="_blank"
+                                                class="link_link__LTNaQ">Documentation →
+                                                <!-- -->
+                                            </a></p>
+                                    </div>
+                                </div>
+                                <div data-version="v1"
+                                    style="--flex:1;--justify-content:flex-start;--align-items:stretch"
+                                    class="jsx-499702677 geist-container geist-card jsx-1005237616">
+                                    <div data-version="v1"
+                                        style="--flex:1;--direction:column;--align:stretch;--justify:flex-start"
+                                        class="jsx-2923788466 stack_stack__A16oG stack">
+                                        <div data-version="v1"
+                                            style="--flex:initial;--direction:row;--align:center;--justify:flex-start"
+                                            class="jsx-1558625419 stack_stack__A16oG stack">
+                                            <div class="cards_icon__pa5SA"><svg data-testid="geist-icon" fill="none"
+                                                    height="24" shape-rendering="geometricPrecision"
+                                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="1.5" viewBox="0 0 24 24" width="24"
+                                                    style="color:var(--geist-violet-light">
+                                                    <path d="M23 6l-9.5 9.5-5-5L1 18" />
+                                                    <path d="M17 6h6v6" />
+                                                </svg></div>
+                                            <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-600__hi7Y9"
+                                                data-version="v1" style="--color:var(--geist-foreground)">Vercel
+                                                Analytics</p>
+                                        </div>
+                                        <div class="cards_content__kYtUw"><span aria-hidden="true" class="geist-spacer"
+                                                data-version="v1"></span>
+                                            <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                                data-version="v1" style="--color:var(--accents-5)">Collect Web Vitals
+                                                from the actual devices your visitors are using and draw actionable
+                                                insights by seeing which pages and source code contribute to your score.
+                                                <!-- -->
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div><span aria-hidden="true" class="geist-spacer" data-version="v1"></span>
+                                        <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                            data-version="v1" style="--color:var(--geist-violet-light)"><a
+                                                class="link_link__LTNaQ" href="/docs/concepts/analytics">Documentation
+                                                →</a></p>
+                                    </div>
+                                </div>
+                                <div data-version="v1"
+                                    style="--flex:1;--justify-content:flex-start;--align-items:stretch"
+                                    class="jsx-499702677 geist-container geist-card jsx-1005237616">
+                                    <div data-version="v1"
+                                        style="--flex:1;--direction:column;--align:stretch;--justify:flex-start"
+                                        class="jsx-2923788466 stack_stack__A16oG stack">
+                                        <div data-version="v1"
+                                            style="--flex:initial;--direction:row;--align:center;--justify:flex-start"
+                                            class="jsx-1558625419 stack_stack__A16oG stack">
+                                            <div class="cards_icon__pa5SA"><svg data-testid="geist-icon" fill="none"
+                                                    height="24" shape-rendering="geometricPrecision"
+                                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="1.5" viewBox="0 0 24 24" width="24"
+                                                    style="color:var(--geist-violet-light">
+                                                    <circle cx="12" cy="12" r="4" />
+                                                    <path d="M1.05 12H7" />
+                                                    <path d="M17.01 12h5.95" />
+                                                </svg></div>
+                                            <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-600__hi7Y9"
+                                                data-version="v1" style="--color:var(--geist-foreground)">Monorepo
+                                                support</p>
+                                        </div>
+                                        <div class="cards_content__kYtUw"><span aria-hidden="true" class="geist-spacer"
+                                                data-version="v1"></span>
+                                            <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                                data-version="v1" style="--color:var(--accents-5)">Build and deploy
+                                                multiple projects in parallel from the same Git repo and selectively
+                                                ignore the Build Step for unchanged projects.
+                                                <!-- -->
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div><span aria-hidden="true" class="geist-spacer" data-version="v1"></span>
+                                        <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                            data-version="v1" style="--color:var(--geist-violet-light)"><a
+                                                href="/docs/concepts/git/monorepos " rel="noopener" target="_blank"
+                                                class="link_link__LTNaQ">Documentation →
+                                                <!-- -->
+                                            </a></p>
+                                    </div>
+                                </div>
+                                <div data-version="v1"
+                                    style="--flex:1;--justify-content:flex-start;--align-items:stretch"
+                                    class="jsx-499702677 geist-container geist-card jsx-1005237616">
+                                    <div data-version="v1"
+                                        style="--flex:1;--direction:column;--align:stretch;--justify:flex-start"
+                                        class="jsx-2923788466 stack_stack__A16oG stack">
+                                        <div data-version="v1"
+                                            style="--flex:initial;--direction:row;--align:center;--justify:flex-start"
+                                            class="jsx-1558625419 stack_stack__A16oG stack">
+                                            <div class="cards_icon__pa5SA"><svg data-testid="geist-icon" fill="none"
+                                                    height="24" shape-rendering="geometricPrecision"
+                                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="1.5" viewBox="0 0 24 24" width="24"
+                                                    style="color:var(--geist-violet-light">
+                                                    <path d="M12 2v4" />
+                                                    <path d="M12 18v4" />
+                                                    <path d="M4.93 4.93l2.83 2.83" />
+                                                    <path d="M16.24 16.24l2.83 2.83" />
+                                                    <path d="M2 12h4" />
+                                                    <path d="M18 12h4" />
+                                                    <path d="M4.93 19.07l2.83-2.83" />
+                                                    <path d="M16.24 7.76l2.83-2.83" />
+                                                </svg></div>
+                                            <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-600__hi7Y9"
+                                                data-version="v1" style="--color:var(--geist-foreground)">Atomic deploys
+                                            </p>
+                                        </div>
+                                        <div class="cards_content__kYtUw"><span aria-hidden="true" class="geist-spacer"
+                                                data-version="v1"></span>
+                                            <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                                data-version="v1" style="--color:var(--accents-5)">Every Vercel deploy
+                                                is immutable, and domains act as pointers. Reverting and deploying is an
+                                                atomic swap operation.
+                                                <!-- -->
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div><span aria-hidden="true" class="geist-spacer" data-version="v1"></span>
+                                        <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                            data-version="v1" style="--color:var(--geist-violet-light)"><a
+                                                class="link_link__LTNaQ"
+                                                href="/docs/concepts/deployments/overview">Documentation →</a></p>
+                                    </div>
+                                </div>
+                                <div data-version="v1"
+                                    style="--flex:1;--justify-content:flex-start;--align-items:stretch"
+                                    class="jsx-499702677 geist-container geist-card jsx-1005237616">
+                                    <div data-version="v1"
+                                        style="--flex:1;--direction:column;--align:stretch;--justify:flex-start"
+                                        class="jsx-2923788466 stack_stack__A16oG stack">
+                                        <div data-version="v1"
+                                            style="--flex:initial;--direction:row;--align:center;--justify:flex-start"
+                                            class="jsx-1558625419 stack_stack__A16oG stack">
+                                            <div class="cards_icon__pa5SA"><svg data-testid="geist-icon" fill="none"
+                                                    height="24" shape-rendering="geometricPrecision"
+                                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="1.5" viewBox="0 0 24 24" width="24"
+                                                    style="color:var(--geist-violet-light">
+                                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                                    <circle cx="8.5" cy="8.5" r="1.5" />
+                                                    <path d="M21 15l-5-5L5 21" />
+                                                </svg></div>
+                                            <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-600__hi7Y9"
+                                                data-version="v1" style="--color:var(--geist-foreground)">Image
+                                                optimization</p>
+                                        </div>
+                                        <div class="cards_content__kYtUw"><span aria-hidden="true" class="geist-spacer"
+                                                data-version="v1"></span>
+                                            <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                                data-version="v1" style="--color:var(--accents-5)">Achieve ideal loading
+                                                times and prevent layout shifts with next/image—automatically supported
+                                                and served from our Edge Network.
+                                                <!-- -->
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div><span aria-hidden="true" class="geist-spacer" data-version="v1"></span>
+                                        <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                            data-version="v1" style="--color:var(--geist-violet-light)"><a
+                                                class="link_link__LTNaQ"
+                                                href="/docs/concepts/image-optimization">Documentation →</a></p>
+                                    </div>
+                                </div>
+                                <div data-version="v1"
+                                    style="--flex:1;--justify-content:flex-start;--align-items:stretch"
+                                    class="jsx-499702677 geist-container geist-card jsx-1005237616">
+                                    <div data-version="v1"
+                                        style="--flex:1;--direction:column;--align:stretch;--justify:flex-start"
+                                        class="jsx-2923788466 stack_stack__A16oG stack">
+                                        <div data-version="v1"
+                                            style="--flex:initial;--direction:row;--align:center;--justify:flex-start"
+                                            class="jsx-1558625419 stack_stack__A16oG stack">
+                                            <div class="cards_icon__pa5SA"><svg data-testid="geist-icon" fill="none"
+                                                    height="24" shape-rendering="geometricPrecision"
+                                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="1.5" viewBox="0 0 24 24" width="24"
+                                                    style="color:var(--geist-violet-light">
+                                                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                                                    <path d="M2 17l10 5 10-5" />
+                                                    <path d="M2 12l10 5 10-5" />
+                                                </svg></div>
+                                            <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-600__hi7Y9"
+                                                data-version="v1" style="--color:var(--geist-foreground)">Workflow
+                                                integrations</p>
+                                        </div>
+                                        <div class="cards_content__kYtUw"><span aria-hidden="true" class="geist-spacer"
+                                                data-version="v1"></span>
+                                            <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                                data-version="v1" style="--color:var(--accents-5)">Integrate your
+                                                favorite commerce, logging, databases, CMS, monitoring, DevTools,
+                                                messaging, and code repository tools seamlessly into your development.
+                                                <!-- -->
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div><span aria-hidden="true" class="geist-spacer" data-version="v1"></span>
+                                        <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                            data-version="v1" style="--color:var(--geist-violet-light)"><a
+                                                class="link_link__LTNaQ" href="/docs/integrations">Documentation →</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div data-version="v1"
+                                    style="--flex:1;--justify-content:flex-start;--align-items:stretch"
+                                    class="jsx-499702677 geist-container geist-card jsx-1005237616">
+                                    <div data-version="v1"
+                                        style="--flex:1;--direction:column;--align:stretch;--justify:flex-start"
+                                        class="jsx-2923788466 stack_stack__A16oG stack">
+                                        <div data-version="v1"
+                                            style="--flex:initial;--direction:row;--align:center;--justify:flex-start"
+                                            class="jsx-1558625419 stack_stack__A16oG stack">
+                                            <div class="cards_icon__pa5SA"><svg data-testid="geist-icon" fill="none"
+                                                    height="24" shape-rendering="geometricPrecision"
+                                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="1.5" viewBox="0 0 24 24" width="24"
+                                                    style="color:var(--geist-violet-light">
+                                                    <circle cx="12" cy="12" r="10" />
+                                                    <path d="M2 12h20" />
+                                                    <path
+                                                        d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                                                </svg></div>
+                                            <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-600__hi7Y9"
+                                                data-version="v1" style="--color:var(--geist-foreground)">
+                                                Internationalization</p>
+                                        </div>
+                                        <div class="cards_content__kYtUw"><span aria-hidden="true" class="geist-spacer"
+                                                data-version="v1"></span>
+                                            <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                                data-version="v1" style="--color:var(--accents-5)">Take advantage of our
+                                                built-in routing system that directs users to different content based on
+                                                the visitor’s preferred language.
+                                                <!-- -->
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div><span aria-hidden="true" class="geist-spacer" data-version="v1"></span>
+                                        <p class="text_wrapper__aJlSM text_s-14__COjdp text_lh-24___qKPu"
+                                            data-version="v1" style="--color:var(--geist-violet-light)"><a
+                                                class="link_link__LTNaQ"
+                                                href="/docs/concepts/next.js/internationalization">Documentation →</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><span aria-hidden="true" class="geist-spacer" data-version="v1"
+                            style="margin-top:191px"></span>
+                        <h3 class="text_wrapper__aJlSM text_s-40__NAUDm text_w-700__BJEFg text_center__wcieq"
+                            data-version="v1" style="--color:var(--geist-foreground)">Trusted by enterprises</h3><span
+                            aria-hidden="true" class="geist-spacer" data-version="v1"></span>
+                        <div class="nextjs_bottom-description__FaIkQ">
+                            <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-400__XA97_ text_lh-32__iP9gT text_center__wcieq"
+                                data-version="v1" style="--color:var(--accents-5)">Trusted by some of the world&#x27;s
+                                largest companies for their Next.js deployments, Vercel Enterprise provides the features
+                                and support you need to grow quickly, reliably, and securely.</p>
+                        </div><span aria-hidden="true" class="geist-spacer" data-version="v1"
+                            style="margin-top:35px"></span>
+                        <div class="features_cta-button__rlblZ nextjs_bottom-cta__R4m8T"><a role="button" tabindex="0"
+                                href="/enterprise" type="submit"
+                                class="button_base__AOyi_ reset_reset__90FTf button_button__dmey4 reset_reset__90FTf button_large__FQLqa button_invert__ESQI6"
+                                data-geist-button="" data-version="v1"><span class="button_content__9hWh7">Check out
+                                    Enterprise</span></a></div><span aria-hidden="true" class="geist-spacer"
+                            data-version="v1" style="margin-top:95px"></span>
+                        <div class="security_bottom-3__wlNKX">
+                            <div data-version="v1"
+                                style="--flex:initial;--sm-direction:column;--md-direction:column;--lg-direction:row;--align:center;--justify:space-between"
+                                class="jsx-1863589687 stack_stack__A16oG stack">
+                                <div class="security_bottom-3-bullets___SOzm">
+                                    <div data-version="v1"
+                                        style="--flex:initial;--direction:column;--align:stretch;--justify:flex-start"
+                                        class="jsx-3195397959 stack_stack__A16oG stack">
+                                        <div>
+                                            <div data-version="v1"
+                                                style="--flex:initial;--direction:row;--align:stretch;--justify:flex-start"
+                                                class="jsx-2453764976 stack_stack__A16oG stack">
+                                                <div class="cards_icon__pa5SA"><svg data-testid="geist-icon" fill="none"
+                                                        height="24" shape-rendering="geometricPrecision"
+                                                        stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
+                                                        width="24" style="color:var(--geist-success)">
+                                                        <path
+                                                            d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4" />
+                                                    </svg></div>
+                                                <div>
+                                                    <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-600__hi7Y9"
+                                                        data-version="v1" style="--color:var(--geist-foreground)">Stay
+                                                        secure
+                                                        <!-- -->
+                                                    </p><span aria-hidden="true" class="geist-spacer" data-version="v1"
+                                                        style="margin-top:11px"></span>
+                                                    <p class="text_wrapper__aJlSM text_s-14__COjdp" data-version="v1"
+                                                        style="--color:var(--accents-5)">Fortify your apps with
+                                                        SAML/SSO, DDoS mitigation, and SOC2 audit reports.
+                                                        <!-- -->
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div data-version="v1"
+                                                style="--flex:initial;--direction:row;--align:stretch;--justify:flex-start"
+                                                class="jsx-2453764976 stack_stack__A16oG stack">
+                                                <div class="cards_icon__pa5SA"><svg data-testid="geist-icon" fill="none"
+                                                        height="24" shape-rendering="geometricPrecision"
+                                                        stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
+                                                        width="24" style="color:var(--geist-success)">
+                                                        <circle cx="12" cy="12" r="10" />
+                                                        <circle cx="12" cy="12" r="4" />
+                                                        <path d="M4.93 4.93l4.24 4.24" />
+                                                        <path d="M14.83 14.83l4.24 4.24" />
+                                                        <path d="M14.83 9.17l4.24-4.24" />
+                                                        <path d="M14.83 9.17l3.53-3.53" />
+                                                        <path d="M4.93 19.07l4.24-4.24" />
+                                                    </svg></div>
+                                                <div>
+                                                    <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-600__hi7Y9"
+                                                        data-version="v1" style="--color:var(--geist-foreground)">
+                                                        Succeed at scale
+                                                        <!-- -->
+                                                    </p><span aria-hidden="true" class="geist-spacer" data-version="v1"
+                                                        style="margin-top:11px"></span>
+                                                    <p class="text_wrapper__aJlSM text_s-14__COjdp" data-version="v1"
+                                                        style="--color:var(--accents-5)">Keep up with customer demand
+                                                        with Vercel’s serverless, autoscaling infrastructure and 99.99%
+                                                        SLA.
+                                                        <!-- -->
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="security_bottom-3-bullets___SOzm">
+                                    <div data-version="v1"
+                                        style="--flex:initial;--direction:column;--align:stretch;--justify:flex-start"
+                                        class="jsx-3195397959 stack_stack__A16oG stack">
+                                        <div>
+                                            <div data-version="v1"
+                                                style="--flex:initial;--direction:row;--align:stretch;--justify:flex-start"
+                                                class="jsx-2453764976 stack_stack__A16oG stack">
+                                                <div class="cards_icon__pa5SA"><svg data-testid="geist-icon" fill="none"
+                                                        height="24" shape-rendering="geometricPrecision"
+                                                        stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
+                                                        width="24" style="color:var(--geist-success)">
+                                                        <path d="M15 3h6v6" />
+                                                        <path d="M9 21H3v-6" />
+                                                        <path d="M21 3l-7 7" />
+                                                        <path d="M3 21l7-7" />
+                                                    </svg></div>
+                                                <div>
+                                                    <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-600__hi7Y9"
+                                                        data-version="v1" style="--color:var(--geist-foreground)">Access
+                                                        experts
+                                                        <!-- -->
+                                                    </p><span aria-hidden="true" class="geist-spacer" data-version="v1"
+                                                        style="margin-top:11px"></span>
+                                                    <p class="text_wrapper__aJlSM text_s-14__COjdp" data-version="v1"
+                                                        style="--color:var(--accents-5)">Gain a commited success team
+                                                        and access to the developers behind your most-used tools.
+                                                        <!-- -->
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div data-version="v1"
+                                                style="--flex:initial;--direction:row;--align:stretch;--justify:flex-start"
+                                                class="jsx-2453764976 stack_stack__A16oG stack">
+                                                <div class="cards_icon__pa5SA"><svg data-testid="geist-icon" fill="none"
+                                                        height="24" shape-rendering="geometricPrecision"
+                                                        stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
+                                                        width="24" style="color:var(--geist-success)">
+                                                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                                                        <circle cx="9" cy="7" r="4" />
+                                                        <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                                                        <path d="M16 3.13a4 4 0 010 7.75" />
+                                                    </svg></div>
+                                                <div>
+                                                    <p class="text_wrapper__aJlSM text_s-20__pqF_1 text_w-600__hi7Y9"
+                                                        data-version="v1" style="--color:var(--geist-foreground)">Built
+                                                        for teams
+                                                        <!-- -->
+                                                    </p><span aria-hidden="true" class="geist-spacer" data-version="v1"
+                                                        style="margin-top:11px"></span>
+                                                    <p class="text_wrapper__aJlSM text_s-14__COjdp" data-version="v1"
+                                                        style="--color:var(--accents-5)">Give your team the tools to
+                                                        unblock and accelerate their development.
+                                                        <!-- -->
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><span aria-hidden="true" class="geist-spacer" data-version="v1"
+                                style="margin-top:287px"></span>
+                            <div class="security_bottom-graphic-3__WS5B8">
+                                <div class="features_graphic-light___dqdQ"><img alt="Trusted by enterprises"
+                                        data-version="v1"
+                                        srcSet="https://assets.vercel.com/image/upload/front/features/enterprise/security-light-1.svg 1x, https://assets.vercel.com/image/upload/front/features/enterprise/security-light-1.svg 2x"
+                                        src="https://assets.vercel.com/image/upload/front/features/enterprise/security-light-1.svg"
+                                        width="709" height="711" decoding="async" data-nimg="future"
+                                        class="image_intrinsic__rcqFQ" loading="lazy"
+                                        style="color:transparent;background-size:cover;background-position:50% 50%;background-repeat:no-repeat;background-image:url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns=&#x27;http%3A//www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 709 711&#x27;%3E%3Cfilter id=&#x27;b&#x27; color-interpolation-filters=&#x27;sRGB&#x27;%3E%3CfeGaussianBlur stdDeviation=&#x27;20&#x27;/%3E%3C/filter%3E%3Cimage filter=&#x27;url(%23b)&#x27; x=&#x27;0&#x27; y=&#x27;0&#x27; height=&#x27;100%25&#x27; width=&#x27;100%25&#x27; href=&#x27;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABnlBMVEUAAAAAAAAAAP8AAIAAAP8AgP9VqqpVqv9AgP9AgL+AgP9VqtVJkttAgN9gn9+Av/8AVapVgNVmmeZVlepinetbktsAqqpVqv9VjuNVqupmme5jnONrofJmpuZmmeZVquMAqv9indhplvBzpuZ1n+psp+ttpORqn+pzs/JppfBVqv9Av/9An990ouh2p/V3s+54pel1qPB3qu5ooexpluFggN9xqv9zpvJsnet4p+d1rOp2qOx3pu11pepwp+9douhppeFqn99zpeZ6rO5rnut3qOlVldVVqv9roeRsneJxpelwoux1qPB4qOxxout0pu5xpfBOndhJtv9xoex1qOlzqu1tp+97rPAuQlx2net1qu8RGCINEht2rPBzpO1tqOlrrvJineJ0quhzpux0rO51o/B0qvBwn+9vm+lvouZun+N9sPRyrvRwqvR0pulvou5vpulgn+9JbdtNmeZtpO1wn+d2qvJxqvFbpO1NmcwAgIBtnudsouhtoOIAVf8rgNVgn/9km+lmo+taltJjnPFVnPFGi+grgKoAgL//////qUBsAAAAiXRSTlMAAQECAgIDAwQEBAYHCAgEAwYKDA0OAwYJDA8SExQUCQMNERQYGhwYFBEJBAgWGh4iIx4bEQgJFBogJSkrJSALERgfLjIvDAwTGiIpMjU0LiINBxsjKjE0aQ0wp7Q0KiMTGiEoLjIhEBceJS0vMC4eFxAHCg4gJyQOCgIVISMDBggXGRESEgsGBPiF7oEAAAABYktHRIkcYSbMAAAAB3RJTUUH5QsEBA0Y0yTIEAAAAahJREFUKM9jYEAARkYGDMDIxMTMAgTMzEyMKMLMrGzsHEDAzs6KJMXIxMLJxc3Dy8fHy8PNz8nKzAgTF+AQ5BMSFhEVFREW4uPmEIPqYWLlEJeQlJKWkZWVk5aSlOfhYGWCaFAQlFBUUlZRVVNTVdfQFNHiVgAbxsSirSOspKunb2BoaGBkrGsibKrNAtLCJMBtJmVuYWllbWNjbWtnrCwlxC0GkmBhE7d3cHSytXF2cXG1sXVS13TjYQNLcOq4e3h6eTv7+Pr6+XsHWHgEBnFCJURkgkNCw8IjInzDQg2DZSN1UCSiwqNjYqPi4oMTRGASQZIeiUnJKT6xsan+yWmJHpI8nBBX8dinZ2RmhWbn5OaFZuUXFNoXCUAkBItL5DxLs8riQsvKSxPlKioFIRJV2rxuhdWemTW1tTWZntWF9rwcVUzgIKmrbxAulGtsUlVtapQrlGwQrIOEIlMVh2CDfUVzi4xMa2GFfUM9RANICytHPa9Em3BgoHCbBG87MHChEQKMVjGO9iIeXl6eonYOMZQoBMZtXV1HR10dMGZRYh2oCwYYCAAAe05PGQXRYq4AAAAldEVYdGRhdGU6Y3JlYXRlADIwMjEtMTEtMDRUMDQ6MTM6MjQrMDA6MDAhatiQAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIxLTExLTA0VDA0OjEzOjI0KzAwOjAwUDdgLAAAAABJRU5ErkJggg==&#x27;/%3E%3C/svg%3E&quot;)" /><noscript><img
+                                            alt="Trusted by enterprises" data-version="v1"
+                                            srcSet="https://assets.vercel.com/image/upload/front/features/enterprise/security-light-1.svg 1x, https://assets.vercel.com/image/upload/front/features/enterprise/security-light-1.svg 2x"
+                                            src="https://assets.vercel.com/image/upload/front/features/enterprise/security-light-1.svg"
+                                            width="709" height="711" decoding="async" data-nimg="future"
+                                            style="color:transparent" class="image_intrinsic__rcqFQ"
+                                            loading="lazy" /></noscript></div>
+                                <div class="features_graphic-dark__eYXfD"><img alt="Trusted by enterprises"
+                                        data-version="v1"
+                                        srcSet="https://assets.vercel.com/image/upload/front/features/enterprise/security-dark-1.svg 1x, https://assets.vercel.com/image/upload/front/features/enterprise/security-dark-1.svg 2x"
+                                        src="https://assets.vercel.com/image/upload/front/features/enterprise/security-dark-1.svg"
+                                        width="709" height="711" decoding="async" data-nimg="future"
+                                        class="image_intrinsic__rcqFQ" loading="lazy"
+                                        style="color:transparent;background-size:cover;background-position:50% 50%;background-repeat:no-repeat;background-image:url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns=&#x27;http%3A//www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 709 711&#x27;%3E%3Cfilter id=&#x27;b&#x27; color-interpolation-filters=&#x27;sRGB&#x27;%3E%3CfeGaussianBlur stdDeviation=&#x27;20&#x27;/%3E%3C/filter%3E%3Cimage filter=&#x27;url(%23b)&#x27; x=&#x27;0&#x27; y=&#x27;0&#x27; height=&#x27;100%25&#x27; width=&#x27;100%25&#x27; href=&#x27;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYBAMAAAASWSDLAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAIVBMVEUAAAAAVf8AAP8AAP8AgP////////////////8AQP////+4HhjtAAAACnRSTlMAAwECArAQUKAE2did2gAAAAFiS0dEBfhv6ccAAAAHdElNRQflCwQEDRjTJMgQAAAALklEQVQY02NgoCdgRGIrKigLwDkOyKoEWBOQZKoaJsA5zMgqmRmYkDQZOdDVJwA6FgO/gaR4LgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0xMS0wNFQwNDoxMzoyNCswMDowMCFq2JAAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMTEtMDRUMDQ6MTM6MjQrMDA6MDBQN2AsAAAAAElFTkSuQmCC&#x27;/%3E%3C/svg%3E&quot;)" /><noscript><img
+                                            alt="Trusted by enterprises" data-version="v1"
+                                            srcSet="https://assets.vercel.com/image/upload/front/features/enterprise/security-dark-1.svg 1x, https://assets.vercel.com/image/upload/front/features/enterprise/security-dark-1.svg 2x"
+                                            src="https://assets.vercel.com/image/upload/front/features/enterprise/security-dark-1.svg"
+                                            width="709" height="711" decoding="async" data-nimg="future"
+                                            style="color:transparent" class="image_intrinsic__rcqFQ"
+                                            loading="lazy" /></noscript></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="jsx-3b89f5549ccc7499 closing">
+                    <div class="geist-wrapper">
+                        <div data-version="v1" style="--flex:1;--justify-content:flex-start;--align-items:center"
+                            class="jsx-499702677 geist-container lg-row">
+                            <div data-version="v1" style="--flex:1;--justify-content:center;--align-items:stretch"
+                                class="jsx-499702677 geist-container">
+                                <p style="letter-spacing:-0.02em;color:var(--custom-primary-text-color, var(--geist-foreground))"
+                                    class="jsx-4259094379 text_text__tVl7E text_h2__V8zux text geist-text-no-margin text_noMargin__uy__0 text_text-constant-size__TlO1K">
+                                    Develop.
+                                    <!-- --><br class="geist-show-on-tablet" /> Preview.
+                                    <!-- --><br class="geist-show-on-tablet" /> Ship.
+                                    <!-- -->
+                                </p><span aria-hidden="true" class="geist-spacer" data-version="v1"
+                                    style="margin-top:11px"></span>
+                                <p style="color:var(--custom-secondary-text-color, var(--geist-secondary))"
+                                    class="jsx-1763600012 text_text__tVl7E text_p__fjUxc geist-themed geist-secondary text geist-text-no-margin text_noMargin__uy__0 text_themed__eHOst">
+                                    The development platform for the best frontend teams.
+                                    <!-- -->
+                                </p>
+                            </div><span aria-hidden="true" class="geist-spacer geist-show-on-tablet"
+                                data-version="v1"></span>
+                            <div class="jsx-3b89f5549ccc7499 closing-buttons">
+                                <div data-version="v1"
+                                    style="--flex:0 0 auto;--justify-content:flex-start;--align-items:stretch"
+                                    class="jsx-499702677 geist-container">
+                                    <div data-version="v1"
+                                        style="--flex:1;--justify-content:flex-start;--align-items:stretch"
+                                        class="jsx-499702677 geist-container"><a role="button" tabindex="0" href="/new"
+                                            type="submit"
+                                            class="button_base__AOyi_ reset_reset__90FTf button_button__dmey4 reset_reset__90FTf geist-themed geist-success geist-success-fill button_large__FQLqa button_invert__ESQI6"
+                                            data-geist-button="" data-version="v1"
+                                            style="min-width:200px;max-width:200px"><span
+                                                class="button_content__9hWh7">Deploy Now</span></a><span
+                                            aria-hidden="true" class="geist-spacer" data-version="v1"
+                                            style="margin-top:17px"></span><a role="button" tabindex="0"
+                                            href="/contact/sales" type="submit"
+                                            class="button_base__AOyi_ reset_reset__90FTf button_button__dmey4 reset_reset__90FTf button_large__FQLqa button_invert__ESQI6"
+                                            data-geist-button="" data-version="v1"
+                                            style="min-width:200px;max-width:200px"><span
+                                                class="button_content__9hWh7">Talk to an Expert</span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--$-->
+            <footer class="footer_footer__CQcPM" data-version="v1">
+                <nav aria-label="Vercel Directory" role="navigation">
+                    <div class="footer_logotype__Y2l5z"><a href="/home"><svg aria-label="Vercel Inc."
+                                fill="var(--geist-foreground)" height="20" role="img" viewBox="0 0 283 64">
+                                <path
+                                    d="M37 0l37 64H0L37 0zM159.6 34c0-10.3-7.6-17.5-18.5-17.5s-18.5 7.2-18.5 17.5c0 10.1 8.2 17.5 19.5 17.5 6.2 0 11.8-2.3 15.4-6.5l-6.8-3.9c-2.1 2.1-5.2 3.4-8.6 3.4-5 0-9.3-2.7-10.8-6.8l-.3-.7h28.3c.2-1 .3-2 .3-3zm-28.7-3l.2-.6c1.3-4.3 5.1-6.9 9.9-6.9 4.9 0 8.6 2.6 9.9 6.9l.2.6h-20.2zM267.3 34c0-10.3-7.6-17.5-18.5-17.5s-18.5 7.2-18.5 17.5c0 10.1 8.2 17.5 19.5 17.5 6.2 0 11.8-2.3 15.4-6.5l-6.8-3.9c-2.1 2.1-5.2 3.4-8.6 3.4-5 0-9.3-2.7-10.8-6.8l-.3-.7H267c.2-1 .3-2 .3-3zm-28.7-3l.2-.6c1.3-4.3 5.1-6.9 9.9-6.9 4.9 0 8.6 2.6 9.9 6.9l.2.6h-20.2zM219.3 28.3l6.8-3.9c-3.2-5-8.9-7.8-15.8-7.8-10.9 0-18.5 7.2-18.5 17.5s7.6 17.5 18.5 17.5c6.9 0 12.6-2.8 15.8-7.8l-6.8-3.9c-1.8 3-5 4.7-9 4.7-6.3 0-10.5-4.2-10.5-10.5s4.2-10.5 10.5-10.5c3.9 0 7.2 1.7 9 4.7zM282.3 5.6h-8v45h8v-45zM128.5 5.6h-9.2L101.7 36 84.1 5.6h-9.3L101.7 52l26.8-46.4zM185.1 25.8c.9 0 1.8.1 2.7.3v-8.5c-6.8.2-13.2 4-13.2 8.7v-8.7h-8v33h8V36.3c0-6.2 4.3-10.5 10.5-10.5z">
+                                </path>
+                            </svg></a></div>
+                    <div class="footer_group__2SKZl"><input aria-label="Open Navigation Menu"
+                            class="footer_hidden__027FV reset_visuallyHidden__Epm6x" id="footer-group-:R16tb8m:"
+                            type="checkbox" /><label for="footer-group-:R16tb8m:">
+                            <h3>Frameworks</h3>
+                        </label>
+                        <ul class="footer_list__St1yh">
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/solutions/nextjs">Next.js</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/solutions/react">Create React App</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/solutions/svelte">Svelte</a></li>
+                            <li class="footer_item__RjypT"><a href="/guides/deploying-nuxtjs-with-vercel" rel="noopener"
+                                    target="_blank" class="link_link__LTNaQ link_secondary__Htj2D">Nuxt
+                                    <!-- -->
+                                </a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/solutions/gatsby">Gatsby</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/solutions/vue">Vue</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/solutions/angular">Angular</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/templates">More Frameworks</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_group__2SKZl"><input aria-label="Open Navigation Menu"
+                            class="footer_hidden__027FV reset_visuallyHidden__Epm6x" id="footer-group-:R1mtb8m:"
+                            type="checkbox" /><label for="footer-group-:R1mtb8m:">
+                            <h3>Resources</h3>
+                        </label>
+                        <ul class="footer_list__St1yh">
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/docs">Documentation</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/experts">Experts</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/customers">Customers</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/guides">Guides</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/help">Help</a></li>
+                            <li class="footer_item__RjypT"><a href="/docs/api" rel="noopener" target="_blank"
+                                    class="link_link__LTNaQ link_secondary__Htj2D">API Reference
+                                    <!-- -->
+                                </a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/oss">OSS</a></li>
+                            <li class="footer_item__RjypT"><a href="/cli" rel="noopener" target="_blank"
+                                    class="link_link__LTNaQ link_secondary__Htj2D">Command-Line
+                                    <!-- -->
+                                </a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/integrations">Integrations</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_group__2SKZl"><input aria-label="Open Navigation Menu"
+                            class="footer_hidden__027FV reset_visuallyHidden__Epm6x" id="footer-group-:R26tb8m:"
+                            type="checkbox" /><label for="footer-group-:R26tb8m:">
+                            <h3>Company</h3>
+                        </label>
+                        <ul class="footer_list__St1yh">
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/home">Home</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/blog">Blog</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/changelog">Changelog</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/about">About</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/careers">Careers</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/pricing">Pricing</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/enterprise">Enterprise</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/security">Security</a></li>
+                            <li class="footer_item__RjypT"><a href="https://nextjs.org/conf" rel="noopener"
+                                    target="_blank"
+                                    class="link_link__LTNaQ link_external__NODW5 link_secondary__Htj2D">Next.js Conf
+                                    <!-- --><svg data-testid="geist-icon" fill="none" height="1em"
+                                        shape-rendering="geometricPrecision" stroke="currentColor"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        viewBox="0 0 24 24" width="1em" class="link_externalIcon__lLA3x"
+                                        style="color:currentColor">
+                                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                                        <path d="M15 3h6v6" />
+                                        <path d="M10 14L21 3" />
+                                    </svg>
+                                </a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/partners">Partners</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_group__2SKZl"><input aria-label="Open Navigation Menu"
+                            class="footer_hidden__027FV reset_visuallyHidden__Epm6x" id="footer-group-:R2mtb8m:"
+                            type="checkbox" /><label for="footer-group-:R2mtb8m:">
+                            <h3>Legal</h3>
+                        </label>
+                        <ul class="footer_list__St1yh">
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/legal/privacy-policy">Privacy Policy</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/legal/terms">Terms of Service</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/legal/trademark-policy">Trademark Policy</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/legal/inactivity-policy">Inactivity Policy</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/legal/dmca-policy">DMCA Policy</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/legal/support-terms">Support Terms</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/legal/dpa">DPA</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/legal/sla">SLA</a></li>
+                            <li class="footer_item__RjypT"><a class="link_link__LTNaQ link_secondary__Htj2D"
+                                    href="/legal/sub-processors">Sub-processors</a></li>
+                            <li class="footer_item__RjypT"><span class="link_link__LTNaQ link_secondary__Htj2D"
+                                    role="link" tabindex="0">Cookie Preferences</span></li>
+                        </ul>
+                    </div>
+                </nav>
+                <section>
+                    <div class="footer_wrapper__z6ZwQ"><span class="footer_copyright__nFXY7"><span>Copyright</span> ©
+                            <!-- -->2022
+                            <!-- -->
+                            <!-- -->Vercel
+                            <!-- --> Inc. All rights reserved.
+                            <!-- -->
+                        </span><span class="footer_contact__5lVzo">
+                            <ul class="footer_social__TS_hG">
+                                <li><a aria-label="GitHub" class="footer_github__rmvAM" href="https://github.com/vercel"
+                                        rel="noopener" target="_blank"><svg aria-label="github" height="19"
+                                            viewBox="0 0 14 14" width="19">
+                                            <path
+                                                d="M7 .175c-3.872 0-7 3.128-7 7 0 3.084 2.013 5.71 4.79 6.65.35.066.482-.153.482-.328v-1.181c-1.947.415-2.363-.941-2.363-.941-.328-.81-.787-1.028-.787-1.028-.634-.438.044-.416.044-.416.7.044 1.071.722 1.071.722.635 1.072 1.641.766 2.035.59.066-.459.24-.765.437-.94-1.553-.175-3.193-.787-3.193-3.456 0-.766.262-1.378.721-1.881-.065-.175-.306-.897.066-1.86 0 0 .59-.197 1.925.722a6.754 6.754 0 0 1 1.75-.24c.59 0 1.203.087 1.75.24 1.335-.897 1.925-.722 1.925-.722.372.963.131 1.685.066 1.86.46.48.722 1.115.722 1.88 0 2.691-1.641 3.282-3.194 3.457.24.219.481.634.481 1.29v1.926c0 .197.131.415.481.328C11.988 12.884 14 10.259 14 7.175c0-3.872-3.128-7-7-7z"
+                                                fill="currentColor" fill-rule="nonzero"></path>
+                                        </svg></a></li>
+                                <li><a aria-label="Twitter" class="footer_bird__3RjDI" href="https://twitter.com/vercel"
+                                        rel="noopener" target="_blank"><svg aria-label="twitter" fill="currentColor"
+                                            height="16" viewBox="0 0 18 15">
+                                            <path
+                                                d="M18 1.684l-1.687 1.684v.28c0 .307-.05.602-.123.886-.04 2.316-.777 5.387-3.816 7.81C6.404 17.115 0 12.907 0 12.907c5.063 0 5.063-1.684 5.063-1.684-1.126 0-3.376-2.243-3.376-2.243.563.56 1.689 0 1.689 0C.56 7.295.56 5.61.56 5.61c.563.561 1.689 0 1.689 0C-.563 3.368 1.124.561 1.124.561 1.687 3.368 9 4.49 9 4.49l.093-.046A6.637 6.637 0 0 1 9 3.368C9 1.353 10.636 0 12.656 0c1.112 0 2.094.506 2.765 1.286l.329-.163L17.437 0l-1.122 2.245L18 1.684z"
+                                                fill-rule="nonzero"></path>
+                                        </svg></a></li>
+                            </ul>
+                        </span>
+                        <div class="footer_status__c98JS"></div>
+                        <div class="footer_theme-switcher__kGZC9"></div>
+                    </div>
+                </section>
+            </footer>
+            <!--/$-->
+        </div>
+    </div>
+    <script id="__NEXT_DATA__"
+        type="application/json">{"props":{"pageProps":{"blurBase64DataURLs":{"/front/features/enterprise/enterprise-1-light-1.svg":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAMAAAA7+k+nAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAh1BMVEX/9fT////9/f3////////x9Nnx/PP////7+/vv7+/z8/P+/v79/f35+fn8/Pz6Yu35OOjh4eHw8PDp6en9t/f7fvDv6P3q4f3q4fzj1/z09PT39/f//v7/3an/3Kj/4K389/b4+Pj7+vr6+vr6+fn29vb4N+j5Uev+1Pr7jfL8m/T/8P7+4vyEkElVAAAABXRSTlP9/f7+7wMTMScAAAABYktHRAH/Ai3eAAAAB3RJTUUH5QsEBAohw2DW3wAAAIpJREFUGNN10NsOwiAMBuA6plVhc7iJ6NQ58azv/3xy8IKl7AsXpH9KWgCmM8T5IrJEawIZt0QRKV0lA4ZJDNiq+t+lXNeyDscFzWakQ209RQK98zTunZYGh+OpO5d9ouNiriYQw+AWFCRobbU3hpOnRqe6P6rnYA/tKWxe708cIH4F53TzPP2J+Q+x+xUsycNnGwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0xMS0wNFQwNDoxMDozMyswMDowMMNQXYMAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMTEtMDRUMDQ6MTA6MzMrMDA6MDCyDeU/AAAAAElFTkSuQmCC","/front/features/enterprise/enterprise-1-dark-1.svg":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAMAAAA7+k+nAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAmVBMVEUSBwYiJQkCDgQAAAAHBwcfHx8YGBgAAAAAAAABAQEAAACVEIq4FKoYGBgMDAwSEhJJB0N+DXR+bGyhiouii4vOsbIfHx8XFxdMLwBLLwBJLwAIBQUEBAQLCwsMDAwPDw8HBwcaGhoSEhIYGBgUFBQEBATeGc44BjNaCVOJEH97DnIUARIAEB0AAAABAQEAAAD5Uev5OOj///8EmUmwAAAAMHRSTlPn8O7t7/j15t3MzOjw1tHT2ePj6+v14NvZ2djT0tjT1tHe2NvazvnV3Obiz9HAzcECJfHUAAAAAWJLR0QyQNJMyAAAAAd0SU1FB+ULBAQKIcNg1t8AAACCSURBVBjTY2BgZGJmZmFFAmzMQMDOwIEDMHByYQWcDJzcPFA2Ly8fPy8/BIEkBARx6BASBgMhDAkRUTAQ4RIDAXEsEhKSUtIyslgk5ORhQAFVQhEClDAklIGiKvLyqhhG4XSVmoGhOoo/RMBAiEtDU0sbWYKLS0dBVRXT57p6WIE+AIp6GXHFOpgBAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIxLTExLTA0VDA0OjEwOjMzKzAwOjAww1BdgwAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMS0xMS0wNFQwNDoxMDozMyswMDowMLIN5T8AAAAASUVORK5CYII=","/front/solutions/nextjs/nextjs-faster-light-1.svg":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB1FBMVEUAAAD/9fT////////+/v7////+/v78/Pz39/fv7+/L4dRpzpuI3rJ52qls0Z7+/v4AAAD///+AgIAzMzMVFRUMFxcDnk4IuF4DnE0AAAAAAAAADQ0AShsAp1EGtl1q16AARRUAAAAAAAAAAAAACwsALQ8AmUgCplICrVYAAAAAAAAAAAAAAAAAAAAAMRAAYy4AAAAAAAAAAAAAAAAAAADx+Obx/PP////7+/vy8vL19fXLy8utra34+Pienp6IiIjp6emlpaXw8PDh4eHa2tr+/v79/f38/Pz29vb09PTz8/P6+vrv9fHY8eO55c665s/P6Nrl6+fu7u739/fx8vLv8fDO6NmX37pt1Z9FzohM0Ixp0ZuS2rXG4NHo6unu7+/o6em738x42KlU0pIYuGcKslzR8eGx58xFzId2zqK81cfd3t7j4+Pn5+fq6urt7e3c4N070YUy04DC7NYnwXQLuWA3xX43yH6I0KvT19Tg4ODm5ubS59xN0o6j5MNGyYYZuWgou3GT37lpy5nA1crf39+84s9c0pUKu2CE2a900qKU27d11KTC7Ne+49HG5dRj0prC7dcKvGE4wnxlzppXyY9Hx4Z11qQKu2KD264oxXSz6s4U0SA9AAAANXRSTlMA+/v+/rLCwsPEy+L+/uGyAQICBQwWX6ldBAoTJm6h8CUDCRAXIlV2egIGCxMWHywMDhIFB/+3B+MAAAABYktHRAJmC3xkAAAAB3RJTUUH5QsEBBYUc6RPoQAAASBJREFUGBl1wcEuA1EYhuH3O/M3ZhRtiY0l6Upiw7VZWdq5JGuLxh1IxE6EhaPVTnWmfmemoYnwPNKZhMSalsCthQC480sI/M0D/zDApAW/GZBJNDodkD6hqsAACxMaVcWaAVPYQXoDeu6MaRgwkCY7496+GrHcrceAAd1ZPFBXK1t6mffewIDnJVta25ZGYEA3DNVCcaDkBjBgGe9O1cCLTNLsZARGsve5qYdDJXVnsXEdFoDRKnSsRu2Z01JHqHWle478XLUnFNYVai3yIf64qaUnuIB+odYFl+5Z5V5GENAfaAVfeY1gJLk0zyXh7mXuTpIB89qsLrL3IkyK8GHlSwSMJJKXA/kTeeblxmskMRoRZrjjU8oy0hA/+kDk2xegP3PPw6OtkAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0xMS0wNFQwNDoyMjoyMCswMDowMKMF8bwAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMTEtMDRUMDQ6MjI6MjArMDA6MDDSWEkAAAAAAElFTkSuQmCC","/front/solutions/nextjs/nextjs-faster-dark-1.svg":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB71BMVEUAAAASBwYSGgYCDgQAAAAHBwcfHx8YGBgAAAAAAAABAQEAAAAzMzNLS0sHBwdWVlYXFxdQUFAQEBAdHR0lJSUZGRkbGxsKCgoAAAAABwIAHg0/blU+blVGYVJPVVFRUVFSUlJUVFRJSUkSEhIXFxcPDw8PEBAGCAcAHw0BUykEdjsUolkZoVshjlUqd087V0dGSEdHSEhCQkIsLCwXFxcODg4REREICAgVFhYNNSABazc1tnWQkJAVFRUUFBQYHRkLpFcmyHQAAAAAGQwEkkmRkZEALRYFhEIAKxYAJREEfEAAAAACAgIAAAAAAAAAAAAAGQoBcDeF269216UBbzcAAAAAAAAAAAAAAAAADAwAnEsIuF4AmkoAAAAAAAAADQ0AShsAp1EGtl1q16AARRUAAAAAAAAAAAAACwsALQ8AmUgCplICrVYAAAAAAAAAAAAAAAAAMRAAYy4AAAAAAAAAAABmZmYYuGcKslzR8eGx58w6wXxNpXl7lIaQkZGUlJSXl5fC7NYnwXQLuWA3xX4rvHJZoXyKjouTk5OWlpaYmJij5MNGyYYZuWgou3GT37lFp3V+k4iSkpIKu2CE2a900qKU27d11KTC7NfC7dcKvGE4wnxlzppXyY9Hx4Z11qQKu2KD264oxXSz6s7///995BGJAAAAdnRSTlMA5+/u7e/49ebVzMzi78/21fPS2dzi5dXNz9Ps6+nm5eXl4t3i29zU1eHq9vfz7ufj4t/Y0trd1uPl6Pn83+Do+v7O1fD82e7Z1+yPnJydoKzP/v3PAQIFDBZfqV0EChMmbqHwJQMJEBciVXZ6BgsTFh8sDhIH7TbDuwAAAAFiS0dEpFm+erkAAAAHdElNRQflCwQEFhRzpE+hAAABFElEQVQYGXXBvUpcQQCG4febGc8ZF02iTUAIEXIRNhZ2KYJ2exFe2yls7LSwTWM6cwGploBwCOuOP8uXOQdcMW6eRwMkXmgJJG2yXpJYx4H/CIBC5I0AxNPAIDRN0+amaQKgiWjDgn85AfeskYCJkNDKjCoB7/Tajn5CAnY1OtSzSyABGVVHEppvqTr5AQm45kD6KgnnKGlxASSqbaJu91Q9bZzp4eYPkBhF7WsQHc1I34RGx/rFJ5/ryRVOE4EGD/kz/p21tA0WMM0aHXFlx0e7dJCoskbfybajXYBE1X/UfSsJ26X1jCoAnYs9i3ch3MWZXdwBkermy9zLD6Wfp83efemoxGiKeF/IPaZjIFamQMezv47nXP+4Y4sUAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIxLTExLTA0VDA0OjIyOjIwKzAwOjAwowXxvAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMS0xMS0wNFQwNDoyMjoyMCswMDowMNJYSQAAAAAASUVORK5CYII=","/front/features/enterprise/security-light-1.svg":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABnlBMVEUAAAAAAAAAAP8AAIAAAP8AgP9VqqpVqv9AgP9AgL+AgP9VqtVJkttAgN9gn9+Av/8AVapVgNVmmeZVlepinetbktsAqqpVqv9VjuNVqupmme5jnONrofJmpuZmmeZVquMAqv9indhplvBzpuZ1n+psp+ttpORqn+pzs/JppfBVqv9Av/9An990ouh2p/V3s+54pel1qPB3qu5ooexpluFggN9xqv9zpvJsnet4p+d1rOp2qOx3pu11pepwp+9douhppeFqn99zpeZ6rO5rnut3qOlVldVVqv9roeRsneJxpelwoux1qPB4qOxxout0pu5xpfBOndhJtv9xoex1qOlzqu1tp+97rPAuQlx2net1qu8RGCINEht2rPBzpO1tqOlrrvJineJ0quhzpux0rO51o/B0qvBwn+9vm+lvouZun+N9sPRyrvRwqvR0pulvou5vpulgn+9JbdtNmeZtpO1wn+d2qvJxqvFbpO1NmcwAgIBtnudsouhtoOIAVf8rgNVgn/9km+lmo+taltJjnPFVnPFGi+grgKoAgL//////qUBsAAAAiXRSTlMAAQECAgIDAwQEBAYHCAgEAwYKDA0OAwYJDA8SExQUCQMNERQYGhwYFBEJBAgWGh4iIx4bEQgJFBogJSkrJSALERgfLjIvDAwTGiIpMjU0LiINBxsjKjE0aQ0wp7Q0KiMTGiEoLjIhEBceJS0vMC4eFxAHCg4gJyQOCgIVISMDBggXGRESEgsGBPiF7oEAAAABYktHRIkcYSbMAAAAB3RJTUUH5QsEBA0Y0yTIEAAAAahJREFUKM9jYEAARkYGDMDIxMTMAgTMzEyMKMLMrGzsHEDAzs6KJMXIxMLJxc3Dy8fHy8PNz8nKzAgTF+AQ5BMSFhEVFREW4uPmEIPqYWLlEJeQlJKWkZWVk5aSlOfhYGWCaFAQlFBUUlZRVVNTVdfQFNHiVgAbxsSirSOspKunb2BoaGBkrGsibKrNAtLCJMBtJmVuYWllbWNjbWtnrCwlxC0GkmBhE7d3cHSytXF2cXG1sXVS13TjYQNLcOq4e3h6eTv7+Pr6+XsHWHgEBnFCJURkgkNCw8IjInzDQg2DZSN1UCSiwqNjYqPi4oMTRGASQZIeiUnJKT6xsan+yWmJHpI8nBBX8dinZ2RmhWbn5OaFZuUXFNoXCUAkBItL5DxLs8riQsvKSxPlKioFIRJV2rxuhdWemTW1tTWZntWF9rwcVUzgIKmrbxAulGtsUlVtapQrlGwQrIOEIlMVh2CDfUVzi4xMa2GFfUM9RANICytHPa9Em3BgoHCbBG87MHChEQKMVjGO9iIeXl6eonYOMZQoBMZtXV1HR10dMGZRYh2oCwYYCAAAe05PGQXRYq4AAAAldEVYdGRhdGU6Y3JlYXRlADIwMjEtMTEtMDRUMDQ6MTM6MjQrMDA6MDAhatiQAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIxLTExLTA0VDA0OjEzOjI0KzAwOjAwUDdgLAAAAABJRU5ErkJggg==","/front/features/enterprise/security-dark-1.svg":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYBAMAAAASWSDLAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAIVBMVEUAAAAAVf8AAP8AAP8AgP////////////////8AQP////+4HhjtAAAACnRSTlMAAwECArAQUKAE2did2gAAAAFiS0dEBfhv6ccAAAAHdElNRQflCwQEDRjTJMgQAAAALklEQVQY02NgoCdgRGIrKigLwDkOyKoEWBOQZKoaJsA5zMgqmRmYkDQZOdDVJwA6FgO/gaR4LgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0xMS0wNFQwNDoxMzoyNCswMDowMCFq2JAAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMTEtMDRUMDQ6MTM6MjQrMDA6MDBQN2AsAAAAAElFTkSuQmCC"}},"__N_SSG":true},"page":"/solutions/nextjs","query":{},"buildId":"zuM5dehtcHg8Du1-YiM4h","isFallback":false,"gsp":true,"scriptLoader":[]}</script>
+</body>
+
+</html>
